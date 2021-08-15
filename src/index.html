@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/css/OverlayScrollbars.css"
+        integrity="sha512-Ho1L8FTfzcVPAlvfkL1BV/Lmy1JDUVAP82/LkhmKbRX5PnQ7CNDHAUp2GZe7ybBpovS+ssJDf+SlBOswrpFr8g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <div class="app">
+        <nav class="navbar flexCenter">
+            <div class="navbar__listLeft">
+                <div class="navbar__item flexCenter" id="menu">
+                    <div class="navbar__iconContainer flexCenter">
+                        <i class="material-icons">menu</i>
+                    </div>
+                </div>
+                <div class="navbar__item flexCenter">
+                    <div class="navbar__iconContainer flexCenter">
+                        <i class="material-icons md-18">dashboard</i>
+                    </div>
+                    <span class="navbar__label">Dashboard</span>
+                </div>
+            </div>
+            <div class="navbar__listRight">
+                <div class="navbar__item flexCenter">
+                    <i class="material-icons">search</i>
+                </div>
+                <div class="navbar__item flexCenter" id="avatar">
+                    <img src="./assets/avatar.png" alt="avatar">
+                </div>
+                </ul>
+        </nav>
+        <div class="container">
+            <nav class="sidebar" data-simplebar>
+                <div class="sidebar__header flexCenter">
+                    <div class="sidebar__headerLeft">
+                        <span class="sidebar__title">Collections</span>
+                    </div>
+                    <div class="sidebar__headerRight flexCenter">
+                        <div class="sidebar__add flexCenter">
+                            <i class="material-icons">add</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar__list">
+                    <a class="sidebar__listItem active flexCenter" href="#">
+                        <div class="sidebar__itemWrapper flexCenter">
+                            <div class="sidebar__iconContainer pink flexCenter">
+                                <i class="material-icons md-20">school</i>
+                            </div>
+                            <span class="sidebar__label">School</span>
+                        </div>
+                    </a>
+                    <a class="sidebar__listItem flexCenter" href="#">
+                        <div class="sidebar__itemWrapper flexCenter">
+                            <div class="sidebar__iconContainer green flexCenter">
+                                <i class="material-icons md-20">person</i>
+                            </div>
+                            <span class="sidebar__label">Personal</span>
+                        </div>
+                    </a>
+                    <a class="sidebar__listItem flexCenter" href="#">
+                        <div class="sidebar__itemWrapper flexCenter">
+                            <div class="sidebar__iconContainer purple flexCenter">
+                                <i class="material-icons md-20">brush</i>
+                            </div>
+                            <span class="sidebar__label">Design</span>
+                        </div>
+                    </a>
+                </div>
+            </nav>
+            <div class="content flexCenter" data-simplebar>
+                <main class="content__main">
+                    <div class="content__header">
+                        <div class="content__headerLeft">
+                            <a href="#" class="content__returnButton">
+                                <i class="material-icons">chevron_left</i>
+                            </a>
+                            <span class="header__title">School</span>
+                        </div>
+                        <div class="content__headerRight">
+                            <i class="material-icons">more_horiz</i>
+                        </div>
+                    </div>
+                    <div class="content__newTask">
+                        <div class="content__newTaskAdd smallBox flexCenter">
+                            <i class="material-icons md-18">add</i>
+                        </div>
+                        <input type="text" spellcheck="false" class="content__newTaskInput" placeholder="Add a task">
+                    </div>
+
+                    <div class="content__taskHeader">
+                        <span class="header__title tasks">Tasks - <span id="openTasksNo">0</span></span>
+                    </div>
+                    <ul class="content__taskList">
+                    </ul>
+                    <div class="content__taskHeader">
+                        <span class="header__title">Completed - <span id="completedTasksNo">0</span></span>
+                    </div>
+                    <ul class="content__taskList completed">
+                    </ul>
+                </main>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script> -->
+    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/OverlayScrollbars.min.js"
+        integrity="sha512-B1xv1CqZlvaOobTbSiJWbRO2iM0iii3wQ/LWnXWJJxKfvIRRJa910sVmyZeOrvI854sLDsFCuFHh4urASj+qgw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/editTask.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/tasksFir.js"></script>
+    <script src="js/todo.js"></script>
+
+</body>
+
+</html>

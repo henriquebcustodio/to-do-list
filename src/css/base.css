@@ -1,0 +1,62 @@
+* {
+    margin: 0
+}
+html, body {
+    height: 100vh
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: linear-gradient(45deg, #ce69e0 0%, #fd9ea9 100%);
+    display: grid;
+    place-items: center;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-20 { font-size: 20px; }
+
+.simplebar-scrollbar::before {
+    background-color: #4c4e5c;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    /* max-width: 70%;
+    min-width: 500px; */
+    /* border-radius: 7px; */
+    box-shadow: 0px 4px 8px 2px rgba(0,0,0,0.72);
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100% - 50px);
+}
+
+
+
+/* Removes the "ghost" element while sorting */
+.sortable-drag {
+    opacity: 0;
+}
+
+.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+    background-color: #4c4e5c6e;
+}
+
+.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:hover {
+    background-color: #4c4e5c6e;
+}
+
+.os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active {
+    background-color: #4c4e5c6e;
+}
