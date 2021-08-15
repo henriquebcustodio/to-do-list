@@ -15,6 +15,6 @@ A To Do List app where users can create, edit, delete and move tasks. Users can 
 - Firebase
 
 # Screenshots
-![image](https://user-images.githubusercontent.com/77708400/129492594-3de3f16e-b5bc-49e6-8a72-7848e583ffe1.png)
+![image](https://user-images.githubusercontent.com/77708400/129492776-f68a1910-d020-4f6b-a452-7fc39ebed65c.png)
 
 <p><i>App still under development.</i></p>
