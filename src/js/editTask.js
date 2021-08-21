@@ -37,7 +37,7 @@ function closeEditTask(editTaskModal) {
 
 async function editTask(task) {
     const newDescription = document.getElementById('newDescription').value;
-    const taskElementText = document.getElementById(task.id).querySelector('.content__taskText');
+    const taskElementText = document.getElementById(task.id).querySelector('.contentTasks__taskText');
     task.description = newDescription;
     taskElementText.innerText = newDescription;
     await firUpdateTask(task);

@@ -11,14 +11,14 @@ const sortableOptions = {
 };
 
 // Sortable lists for open and closed tasks
-const openTasksList = document.querySelector('.content__taskList');
+const openTasksList = document.querySelector('.contentTasks__taskList');
 Sortable.create(openTasksList, sortableOptions);
 
-const completedTasksList = document.querySelector('.content__taskList.completed');
+const completedTasksList = document.querySelector('.contentTasks__taskList.completed');
 Sortable.create(completedTasksList, sortableOptions);
 
 // Gets the task description and sends it to the newTask functio
-const taskInput = document.querySelector('.content__newTaskInput');
+const taskInput = document.querySelector('.contentTasks__newTaskInput');
 function addTask() {
     if (taskInput.value) {
         newTask(taskInput.value);
@@ -27,7 +27,7 @@ function addTask() {
 }
 
 // Adds a new task when the button "+" is clicked
-const addTaskButton = document.querySelector('.content__newTaskAdd');
+const addTaskButton = document.querySelector('.contentTasks__newTaskAdd');
 addTaskButton.addEventListener('click', addTask);
 
 // Adds a new task when the key "enter" is pressed

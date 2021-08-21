@@ -9,14 +9,14 @@ function Task(description, index) {
 
 function createTaskElement(task) {
     return htmlToElement(`
-    <li class="content__taskListItem flexCenter" id="${task.id}">
-    <div class="content__taskLeft flexCenter">
-        <div class="content__toggleTaskStatus smallBox flexCenter">
+    <li class="contentTasks__taskListItem flexCenter" id="${task.id}">
+    <div class="contentTasks__taskLeft flexCenter">
+        <div class="contentTasks__toggleTaskStatus smallBox flexCenter">
             <i class="material-icons md-18">done</i>
         </div>
-        <span class="content__taskText">${task.description}</span>
+        <span class="contentTasks__taskText">${task.description}</span>
     </div>
-    <div class="content__taskRight flexCenter">
+    <div class="contentTasks__taskRight flexCenter">
         <i class="material-icons md-18 edit">edit</i>
         <i class="material-icons md-18 delete">delete</i>
     </div>
@@ -45,7 +45,7 @@ function addTaskEvents(task, taskElement) {
     taskElement.addEventListener('dragend', () => onDrag = false);
 
     // Listens for clicks on the completeTask button
-    const completeTaskButton = taskElement.querySelector('.content__toggleTaskStatus');
+    const completeTaskButton = taskElement.querySelector('.contentTasks__toggleTaskStatus');
     completeTaskButton.addEventListener('click', function () {
         toggleStatus(task);
         taskElement.classList.remove('hovered');
