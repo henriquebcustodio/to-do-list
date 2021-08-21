@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: #20212C;
+    background-color: var(--nav-gray);
     height: 100%;
     width: 25%;
     min-width: 165px;
@@ -19,7 +19,7 @@
 .sidebar__header {
     top:0;
     position: sticky;
-    background-color: #20212C;
+    background-color: var(--nav-gray);
     padding: 15px 25px;
 }
 
@@ -29,14 +29,14 @@
 }
 
 .sidebar__title {
-    color: #cfcfcf;
+    color: var(--text-gray);
     font-weight: 600;
     font-size: 16px;
     cursor: default;
 }
 
 .sidebar__add {
-    color: #cfcfcf;
+    color: var(--text-gray);
     border-radius: 40%;
     height: 25px;
     width: 25px;
@@ -53,17 +53,17 @@
     justify-content: flex-start;
     height: 65px;
     text-decoration: none;
-    border-left: 0px solid #20212C;
+    border-left: 0px solid var(--nav-gray);
     transition: border-left 0.25s, background-color 0.25s;
 }
 
 .sidebar__listItem.active {
-    border-left: 6px solid #ff76a1;
-    background-color: #272833;
+    border-left: 6px solid var(--std-pink);
+    background-color: var(--hover-gray);
 }
 
 .sidebar__listItem:hover {
-    background-color: #272833;
+    background-color: var(--hover-gray);
 }
 
 .sidebar__itemWrapper {
@@ -84,13 +84,13 @@
 }
 
 .sidebar__iconContainer.pink {
-    background-color: #ff76a1;
+    background-color: var(--std-pink);
 }
 
 .sidebar__iconContainer.green {
-    background-color: #6fc4be;
+    background-color: var(--std-green);
 }
 
 .sidebar__iconContainer.purple {
-    background-color: #ae67e7;
+    background-color: var(--std-purple);
 }

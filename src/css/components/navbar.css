@@ -3,7 +3,7 @@
     position: relative;
     justify-content: space-between;
     height: 50px;
-    background-color: #20212C;
+    background-color: var(--nav-gray);
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.72);
 }
 
@@ -32,7 +32,7 @@
 }
 
 .navbar__item {
-    color: #cfcfcf;
+    color: var(--text-gray);
     margin-right: 25px;
     transition: color 0.2s,transform 0.2s;
 }

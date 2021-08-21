@@ -1,7 +1,7 @@
 .content {
     flex-grow: 2;
     width: 75%;
-    background-color: #17181F;
+    background-color: var(--dark-background);
 }
 
 .content .simplebar-content {
@@ -43,12 +43,12 @@
     border-radius: 35%;
     text-decoration: inherit;
     color: inherit;
-    background-color: #20212C;
+    background-color: var(--nav-gray);
     transition: all 0.2s;
 }
 
 .content__returnButton:hover {
-    background-color: #272833;
+    background-color: var(--hover-gray);
     transform: translateY(-2px);
     cursor: pointer;
 }
@@ -57,7 +57,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #cfcfcf;
+    color: var(--text-gray);
     transition: all 0.2s;
 }
 
@@ -73,7 +73,7 @@
     margin-top: 25px;
     padding: 10px;
     border-radius: 15px;
-    border: 2px solid #1d1e26;
+    border: 2px solid var(--dark-border);
     box-sizing: border-box;
 }
 
@@ -87,8 +87,8 @@
 
 .content__newTaskAdd {
     color: #17181F;
-    background-color: #ff76a1;
-    background: #ff76a1;
+    background-color: var(--std-pink);
+    background: var(--std-pink);
     transition: all 0.2s;
 }
 
@@ -104,14 +104,14 @@
     font-size: 15px;;
     outline: none;
     background-color: transparent;
-    color: #cfcfcf;
+    color: var(--text-gray);
     border: 0;
     margin-left: 10px;
     width: 100%;
 }
 
 .content__newTaskInput:placeholder {
-    color: #cfcfcf;
+    color: var(--text-gray);
 }
 
 .content__taskHeader {
@@ -133,7 +133,7 @@
     min-height: 44px;
     box-sizing: border-box;
     border-radius: 15px;
-    background-color: #20212C;
+    background-color: var(--nav-gray);
     padding: 10px;
     margin-bottom: 10px;
     cursor: pointer;
@@ -159,7 +159,7 @@
 
 .content__taskRight i {
     margin-left: 5px;
-    color: #cfcfcf;
+    color: var(--text-gray);
     transition: all 0.2s;
 }
 
@@ -169,23 +169,23 @@
 }
 
 .content__toggleTaskStatus {
-    border: 2px solid #ff76a1;
-    color: #20212C;
+    border: 2px solid var(--std-pink);
+    color: var(--nav-gray);
     transition: all 0.2s;
 }
 
 .content__toggleTaskStatus:hover {
-    background-color: #ff76a1;
+    background-color: var(--std-pink);
     cursor: pointer;
 }
 
 .completed .content__toggleTaskStatus {
-    background-color: #ff76a1;
+    background-color: var(--std-pink);
     cursor: pointer;
 }
 
 .completed .content__toggleTaskStatus:hover {
-    background-color: #20212C;
+    background-color: var(--nav-gray);
 }
 
 .content__taskText {

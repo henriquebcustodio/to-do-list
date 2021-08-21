@@ -13,7 +13,7 @@
     box-sizing: border-box;
     padding: 12px 20px;
     border-radius: 7px;
-    background-color: #20212C;
+    background-color: var(--nav-gray);
 }
 
 .editTask__header {
@@ -24,7 +24,7 @@
     padding: 4px;
     padding-bottom: 10px;
     width: 100%;
-    color: #cfcfcf;
+    color: var(--text-gray);
     font-weight: 600;
 }
 
@@ -43,7 +43,7 @@
     font-weight: 500;
     font-size: 15px;
     overflow: hidden;
-    color: #cfcfcf;
+    color: var(--text-gray);
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -52,7 +52,7 @@
     outline: none;
     background-color: transparent;
     resize: none;
-    border: 2px solid #272833;
+    border: 2px solid var(--hover-gray);
     border-radius: 7px;
 }
 
@@ -81,9 +81,9 @@
 }
 
 .editTask__button.save {
-    background-color: #ff76a1;
+    background-color: var(--std-pink);
 }
 
 .editTask__button.cancel{
-    background-color: #495057;
+    background-color: var(--light-gray);
 }
