@@ -1,13 +1,14 @@
 :root {
     --dark-background: #17181F;
-    --nav-gray: #20212C;
-    --hover-gray: #272833;
-    --text-gray: #cfcfcf;
-    --light-gray: #495057;
+    --nav-gray: #20212B;
+    --hover-gray: hsl(235, 13%, 18%);
+    --text-gray: #EFF0F3;
+    --button-gray: #32323F;
     --dark-border: #1d1e26;
     --std-pink: #ff76a1;
     --std-green: #6fc4be;
     --std-purple: #ae67e7;
+    --pink-gradient: linear-gradient(45deg, #ce69e0 0%, #fd9ea9 100%);
 }
 
 * {
@@ -19,7 +20,7 @@ html, body {
 
 body {
     font-family: 'Nunito Sans', sans-serif;
-    background: linear-gradient(45deg, #ce69e0 0%, #fd9ea9 100%);
+    background: var(--pink-gradient);
     display: grid;
     place-items: center;
 }
