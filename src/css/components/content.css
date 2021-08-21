@@ -10,7 +10,7 @@
 }
 
 .content__main {
-    width:65%;
+    width: 50%;
     margin-bottom: 50px;
 }
 
@@ -101,7 +101,7 @@
 .content__newTaskInput {
     font-family: inherit;
     font-weight: 500;
-    font-size: 15px;;
+    font-size: 15px;
     outline: none;
     background-color: transparent;
     color: var(--text-gray);
@@ -196,7 +196,7 @@
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
-    color: white;
+    color: var(--text-gray);
     margin-left: 10px;
 }
 
