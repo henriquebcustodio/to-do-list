@@ -5,16 +5,10 @@ function showEditTask(task) {
     const element = htmlToElement(`
     <div class="editTask flexCenter">
     <div class="editTask__main flexCenter">
-        <div class="editTask__header">
-            <div class="editTask__title">Edit Task</div>
-            <div class="editTask__close flexCenter">
-                <i class="material-icons">close</i>
-            </div>
-        </div>
-        <textarea class="editTask__text" id="newDescription" maxlength="250" spellcheck="false">${task.description}</textarea>
+        <textarea class="editTask__text" id="newDescription" maxlength="250" spellcheck="false" rows="1">${task.description}</textarea>
         <div class="editTask__buttons">
-            <div class="editTask__button cancel flexCenter">Cancel</div>
             <div class="editTask__button save flexCenter">Save</div>
+            <div class="editTask__button cancel flexCenter">Cancel</div>
         </div>
     </div>
 </div>
@@ -27,11 +21,6 @@ function showEditTask(task) {
 function addEditTaskEvents(task, editTaskModal) {
     const cancel = editTaskModal.querySelector('.cancel');
     cancel.addEventListener('click', () => {
-        closeEditTask(editTaskModal);
-    });
-
-    const close = editTaskModal.querySelector('.editTask__close');
-    close.addEventListener('click', () => {
         closeEditTask(editTaskModal);
     });
 
@@ -60,6 +49,9 @@ function loadEditTaskScrollbar() {
         scrollbars: {
             autoHide: 'leave',
         },
+        textarea: {
+            dynHeight: true
+        }
     });
 }
 

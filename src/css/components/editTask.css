@@ -8,24 +8,11 @@
 .editTask__main {
     flex-direction: column;
     min-width: 250px;
-    width: 55%;
-    height: 210px;
+    width: 25%;
     box-sizing: border-box;
-    padding: 12px 20px;
-    border-radius: 7px;
+    padding: 30px 25px;
+    border-radius: 15px;
     background-color: var(--nav-gray);
-}
-
-.editTask__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 4px;
-    padding-bottom: 10px;
-    width: 100%;
-    color: var(--text-gray);
-    font-weight: 600;
 }
 
 .editTask__close {
@@ -42,36 +29,33 @@
     font-family: inherit;
     font-weight: 500;
     font-size: 15px;
-    overflow: hidden;
     color: var(--text-gray);
+    overflow: visible;
     width: 100%;
-    height: 100%;
     box-sizing: border-box;
-    padding: 10px;
-    border: none;
+    padding: 13px;
+    resize: none;
     outline: none;
     background-color: transparent;
-    resize: none;
     border: 2px solid var(--hover-gray);
-    border-radius: 7px;
+    border-radius: 13px;
 }
 
 .editTask__buttons {
     display: flex;
-    margin-top: 15px;
-    margin-bottom: 3px;
-    margin-right: 3px;
-    justify-content: flex-end;
+    margin-top: 30px;
+    justify-content: flex-start;
     width: 100%;
 }
 
 .editTask__button {
     width: 75px;
     box-sizing: border-box;
-    padding: 5px;
-    margin-left: 15px;
+    padding: 11px 50px;
+    margin-right: 15px;
     color: white;
-    border-radius: 5px;
+    font-weight: 600;
+    border-radius: 10px;
     transition: all 0.2s;
 }
 
@@ -81,9 +65,9 @@
 }
 
 .editTask__button.save {
-    background-color: var(--std-pink);
+    background: var(--pink-gradient)
 }
 
 .editTask__button.cancel{
-    background-color: var(--light-gray);
+    background-color: var(--button-gray);
 }
