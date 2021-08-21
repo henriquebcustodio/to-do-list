@@ -77,7 +77,6 @@
     background-color: var(--hover-gray);
 }
 
-
 .contentTasks__headerRight:hover .contentTasks__dropdownContent  {
     display: block;
 }

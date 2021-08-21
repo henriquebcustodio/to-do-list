@@ -1,9 +1,6 @@
 @import 'base.css';
-@import './components/content.css';
-@import './components/contentTasks.css';
 @import './components/navbar.css';
 @import './components/sidebar.css';
 @import './components/editTask.css';
-
-
-
+@import './components/content.css';
+@import './views/tasksView.css';
