@@ -9,6 +9,8 @@
     flex-direction: column;
     min-width: 250px;
     width: 25%;
+    min-width: 262px;
+    margin: 0 40px;
     box-sizing: border-box;
     padding: 30px 25px;
     border-radius: 15px;
