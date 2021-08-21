@@ -1,6 +1,7 @@
 .content {
     flex-grow: 2;
     width: 75%;
+    min-width: 370px;
     background-color: var(--dark-background);
 }
 
@@ -169,7 +170,7 @@
 }
 
 .content__toggleTaskStatus {
-    border: 2px solid var(--std-pink);
+    border: 2.5px solid var(--std-pink);
     color: var(--nav-gray);
     transition: all 0.2s;
 }
