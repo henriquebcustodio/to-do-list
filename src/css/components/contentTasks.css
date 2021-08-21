@@ -13,7 +13,7 @@
 }
 
 .contentTasks__headerLeft .header__title {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 700;
     margin-left: 13px;
 }
@@ -22,8 +22,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
     border-radius: 35%;
     text-decoration: inherit;
     color: inherit;
@@ -54,6 +54,7 @@
 .contentTasks__newTask {
     display: flex;
     align-items: center;
+    height: 48px;
     margin-top: 25px;
     padding: 10px;
     border-radius: 15px;
@@ -77,8 +78,7 @@
 }
 
 .contentTasks__newTaskAdd:hover {
-    color: white;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     cursor: pointer;
 }
 
@@ -103,6 +103,7 @@
     margin-bottom: 10px;
     margin-left: 5px;
     font-weight: 600;
+    font-size: 18px;
     color: white;
 }
 
@@ -114,7 +115,7 @@
 
 .contentTasks__taskListItem {
     justify-content: space-between;
-    min-height: 44px;
+    height: 48px;
     box-sizing: border-box;
     border-radius: 15px;
     background-color: var(--nav-gray);
@@ -180,7 +181,7 @@
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
-    color: var(--text-gray);
+    color: white;
     margin-left: 10px;
 }
 
