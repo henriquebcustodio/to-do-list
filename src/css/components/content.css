@@ -1,7 +1,7 @@
 .content {
     flex-grow: 2;
     width: 75%;
-    min-width: 370px;
+    min-width: 500px;
     background-color: var(--dark-background);
 }
 
