@@ -70,6 +70,7 @@ async function newTask(taskDescription) {
     const taskElement = createTaskElement(task);
     addTaskEvents(task, taskElement);
     openTasksList.appendChild(taskElement);
+    updateCount();
     await firPushTask(task);
 }
 
