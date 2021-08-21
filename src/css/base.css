@@ -20,7 +20,6 @@ html, body {
 
 body {
     font-family: 'Nunito Sans', sans-serif;
-    background: var(--pink-gradient);
     display: grid;
     place-items: center;
 }
