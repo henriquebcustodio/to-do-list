@@ -41,7 +41,8 @@ function updateDashboardItems(collections) {
     collections.sort((a, b) => a.index - b.index);
     collections.forEach(collection => {
         const collectionElement = createCollectionElement(collection);
-        addCollectionEvents(collectionElement, collection);
         collectionsContainer.insertBefore(collectionElement, document.querySelector('#newCollection'));
+        addCollectionEvents(collectionElement, collection);
+        loadCollectionStats(collectionElement, collection);
     });
 }

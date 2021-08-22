@@ -18,7 +18,7 @@ function createCollectionElement(collection) {
         <div class="contentDashboard__collectionInfo">
             <div class="collectionInfo__left">
                 <span class="collectionTitle">${collection.name}</span>
-                <span class="collectionStats">4/8 done</span>
+                <span class="collectionStats loading"></span>
             </div>
             <div class="collectionProgress">
                 <div>
@@ -31,8 +31,6 @@ function createCollectionElement(collection) {
 }
 
 function addCollectionEvents(collectionElement, collection) {
-    progressCircle(collectionElement.querySelector('.progressCircle'));
-
     collectionElement.addEventListener('click', () => {
         closeDashboardView();
         renderTasksView(collection);
@@ -40,18 +38,39 @@ function addCollectionEvents(collectionElement, collection) {
     });
 }
 
-function progressCircle(container) {
-    var bar = new ProgressBar.Circle(container, {
+async function loadCollectionStats(collectionElement, collection) {
+    const circle = progressCircle(collectionElement.querySelector('.progressCircle'), collection);
+    const closedTasks = await firTaskCountFilter(collection, 'isOpen', '==', false);
+    const allTasks = await firTaskCount(collection);
+    const percentComplete = closedTasks / allTasks;
+
+    circle.animate(percentComplete, {
+        duration: 1000 * percentComplete,
+    });
+
+    const stats = collectionElement.querySelector('.collectionStats');
+    if (allTasks === 0) {
+        stats.innerText = 'No tasks yet';
+    } else if (allTasks > 0 && percentComplete !== 1) {
+        stats.innerText = `${closedTasks}/${allTasks} done`;
+    } else {
+        stats.innerText = `All ${allTasks} done!`;
+    }
+    stats.classList.remove('loading');
+}
+
+function progressCircle(container, collection) {
+
+    let circle = new ProgressBar.Circle(container, {
         strokeWidth: 12,
         easing: 'easeInOut',
-        duration: 1400,
-        color: '#ae67e7',
+        color: collection.color,
         trailColor: '#33333E',
         trailWidth: 12,
         svgStyle: null
     });
 
-    // bar.animate(1.0);  // Number from 0.0 to 1.0
+    return circle;
 }
 
 async function newCollection(name, color, icon) {
