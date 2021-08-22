@@ -26,12 +26,12 @@ function createTasksView(collection) {
                 placeholder="Add a task">
         </div>
 
-        <div class="contentTasks__taskHeader">
+        <div class="contentTasks__listHeader">
             <span class="header__title tasks">Tasks - <span id="openTasksNo">0</span></span>
         </div>
         <ul class="contentTasks__taskList">
         </ul>
-        <div class="contentTasks__taskHeader">
+        <div class="contentTasks__listHeader">
             <span class="header__title">Completed - <span id="completedTasksNo">0</span></span>
         </div>
         <ul class="contentTasks__taskList completed">
