@@ -11,7 +11,7 @@ function createTasksView(collection) {
                 <span class="header__title">${collection.name}</span>
             </div>
             <div class="contentTasks__headerRight">
-                <i class="material-icons">more_horiz</i>
+                <i class="material-icons" id="dotMenu">more_horiz</i>
                 <div class="contentTasks__dropdownContent">
                     <div>Edit Collection</div>
                     <div>Delete Collection</div>
@@ -63,6 +63,11 @@ function renderTasksView(collection) {
     completedTasksList = document.querySelector('.contentTasks__taskList.completed');
     Sortable.create(completedTasksList, sortableOptions);
 
+    loadTasksViewEvents(collection);
+    updateData(collection);
+}
+
+function loadTasksViewEvents(collection) {
     // Adds a new task when the button "+" is clicked
     addTaskButton = document.querySelector('.contentTasks__newTaskAdd');
     addTaskButton.addEventListener('click', () => addTask(collection));
@@ -82,7 +87,18 @@ function renderTasksView(collection) {
         sidebarResetActive();
     });
 
-    updateData(collection);
+    const dotMenu = document.querySelector('#dotMenu');
+    dotMenu.addEventListener('click', () => {
+        // tasksViewIgnoreClick = true;
+        dotMenu.classList.toggle('active');
+    });
+
+    // document.querySelector('.container').addEventListener('click', () => {
+    //     if (dotMenu.classList.contains('active') && !tasksViewIgnoreClick) {
+    //         dotMenu.classList.toggle('active');
+    //     }
+    //     tasksViewIgnoreClick = false;
+    // });
 }
 
 function closeTasksView() {

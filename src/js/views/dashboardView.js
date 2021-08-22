@@ -16,15 +16,18 @@ function createDashboardView() {
 async function renderDashboardView() {
 
     dashboardNav.classList.add('active');
-
     document.querySelector('.content__main').appendChild(createDashboardView());
 
-    const newCollectionButton = document.querySelector('#newCollection');
-    newCollectionButton.addEventListener('click', showNewCollection);
+    loadDashboardViewEvents();
 
     collectionsContainer = document.querySelector('.contentDashboard__collections');
 
     await updateDashboard();
+}
+
+function loadDashboardViewEvents() {
+    const newCollectionButton = document.querySelector('#newCollection');
+    newCollectionButton.addEventListener('click', showNewCollection);
 }
 
 function closeDashboardView() {
