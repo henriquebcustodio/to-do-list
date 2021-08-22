@@ -1,6 +1,6 @@
 let onDrag = false;
 
-function createTasksView() {
+function createTasksView(collection) {
     return htmlToElement(`
     <div class="contentTasks">
         <div class="contentTasks__header">
@@ -8,7 +8,7 @@ function createTasksView() {
                 <a href="#" class="contentTasks__returnButton">
                     <i class="material-icons md-30">chevron_left</i>
                 </a>
-                <span class="header__title">School</span>
+                <span class="header__title">${collection.name}</span>
             </div>
             <div class="contentTasks__headerRight">
                 <i class="material-icons">more_horiz</i>
@@ -40,18 +40,19 @@ function createTasksView() {
     `);
 };
 
-const sortableOptions = {
-    animation: 350,
-    dragClass: 'sortable-drag',
-    onEnd: function (evt) {
-        if (evt.newIndex !== evt.oldIndex) {
-            updateIndex();
-        }
-    }
-};
+function renderTasksView(collection) {
 
-function renderTasksView() {
-    document.querySelector('.content__main').appendChild(createTasksView());
+    const sortableOptions = {
+        animation: 350,
+        dragClass: 'sortable-drag',
+        onEnd: function (evt) {
+            if (evt.newIndex !== evt.oldIndex) {
+                updateIndex(collection);
+            }
+        }
+    };
+
+    document.querySelector('.content__main').appendChild(createTasksView(collection));
 
     // Sortable lists for open and closed tasks
     openTasksList = document.querySelector('.contentTasks__taskList');
@@ -62,17 +63,24 @@ function renderTasksView() {
 
     // Adds a new task when the button "+" is clicked
     addTaskButton = document.querySelector('.contentTasks__newTaskAdd');
-    addTaskButton.addEventListener('click', addTask);
+    addTaskButton.addEventListener('click', () => addTask(collection));
 
     // Adds a new task when the key "enter" is pressed
     taskInput = document.querySelector('.contentTasks__newTaskInput');
     taskInput.addEventListener('keyup', function (e) {
         if (e.keyCode === 13) {
-            addTask();
+            addTask(collection);
         }
     });
 
-    updateData();
+    const returnButton = document.querySelector('.contentTasks__returnButton');
+    returnButton.addEventListener('click', () => {
+        closeTasksView();
+        renderDashboardView();
+        sidebarResetActive();
+    });
+
+    updateData(collection);
 }
 
 function closeTasksView() {
@@ -81,21 +89,21 @@ function closeTasksView() {
 }
 
 // Gets the task description and sends it to the newTask function
-function addTask() {
+function addTask(collection) {
     if (taskInput.value) {
-        newTask(taskInput.value);
+        newTask(taskInput.value, collection);
         taskInput.value = '';
     }
 }
 
 // Gets the tasks from firestore and updates the screen
-async function updateData() {
+async function updateData(collection) {
     let tasks = [];
-    const snapshot = await firGetSnapshot();
+    const snapshot = await firTasksSnapshot(collection);
     snapshot.forEach(doc => {
         tasks.push(doc.data());
     });
-    updateScreen(tasks);
+    updateScreen(tasks, collection);
 }
 
 // Counts the number of open and completed tasks
@@ -107,11 +115,11 @@ function updateCount() {
 }
 
 // Creates the task elements on the screen every reload
-function updateScreen(tasks) {
+function updateScreen(tasks, collection) {
     tasks.sort((a, b) => a.index - b.index);
     tasks.forEach(task => {
         const taskElement = createTaskElement(task);
-        addTaskEvents(task, taskElement);
+        addTaskEvents(task, taskElement, collection);
         if (task.isOpen === false) {
             completedTasksList.appendChild(taskElement);
 

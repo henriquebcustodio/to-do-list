@@ -7,7 +7,7 @@ function showNewCollection() {
             <div class="newCollection__label">
                 <span>Name</span>
             </div>
-            <textarea class="formInput" id="collectionName" maxlength="20" spellcheck="false" rows="1"
+            <textarea class="formInput" id="collectionName" maxlength="10" spellcheck="false" rows="1"
                 placeholder="My Collection" required></textarea>
             <div class="newCollection__label">
                 <span>Icon</span>
@@ -35,6 +35,7 @@ function showNewCollection() {
     addNewCollectionEvents(element);
     loadIcons();
     loadColors();
+    loadNewCollectionScrollbar();
 }
 
 function addNewCollectionEvents(newCollectionModal) {
@@ -103,4 +104,13 @@ function addCollection() {
     const color = document.querySelector('.newCollection .colorItem.active').getAttribute('id');
     const icon = document.querySelector('.newCollection__iconWrapper i').innerHTML;
     newCollection(name, color, icon);
+}
+
+function loadNewCollectionScrollbar() {
+    const newCollection = document.getElementById('collectionName');
+    OverlayScrollbars(newCollection, {
+        textarea: {
+            dynHeight: true
+        }
+    });
 }

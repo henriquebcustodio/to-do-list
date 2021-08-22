@@ -9,7 +9,7 @@ function Collection(name, color, icon) {
 
 function createCollectionElement(collection) {
     return htmlToElement(`
-    <div class="contentDashboard__collectionItem">
+    <div class="contentDashboard__collectionItem ${collection.id}">
         <div class="collectionItem__header">
             <div class="contentDashboard__iconContainer flexCenter" style="background-color:${collection.color}">
                 <i class="material-icons">${collection.icon}</i>
@@ -30,8 +30,14 @@ function createCollectionElement(collection) {
     `);
 }
 
-function addCollectionEvents(collectionElement) {
+function addCollectionEvents(collectionElement, collection) {
     progressCircle(collectionElement.querySelector('.progressCircle'));
+
+    collectionElement.addEventListener('click', () => {
+        closeDashboardView();
+        renderTasksView(collection);
+        sidebarSetActive(collection.index, collection);
+    });
 }
 
 function progressCircle(container) {
@@ -51,8 +57,8 @@ function progressCircle(container) {
 async function newCollection(name, color, icon) {
     const collection = Collection(name, color, icon);
     const collectionElement = createCollectionElement(collection);
-    collectionsList.insertBefore(collectionElement, document.querySelector('#newCollection'));
-    addCollectionEvents(collectionElement);
+    collectionsContainer.insertBefore(collectionElement, document.querySelector('#newCollection'));
+    addCollectionEvents(collectionElement, collection);
     createSidebarItemElement(collection);
     collection.index = await firCollectionCount();
     await firPushCollection(collection);

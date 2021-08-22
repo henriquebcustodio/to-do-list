@@ -1,11 +1,6 @@
-const taskCollection = 'tasks';
-
-let sendSnapshots = true;
-
-async function firPushTask(task) {
+async function firPushTask(task, collection) {
     try {
-        task.index = 1;
-        await item.doc(task.id).set(task);
+        await collectionsDB.doc(collection.id).collection('tasks').doc(task.id).set(task);
         console.log('Task added to db');
     }
     catch (err) {
@@ -13,9 +8,10 @@ async function firPushTask(task) {
     }
 }
 
-async function firUpdateTask(task) {
+
+async function firUpdateTask(task, collection) {
     try {
-        await db.collection(taskCollection).doc(task.id).update(task);
+        await collectionsDB.doc(collection.id).collection('tasks').doc(task.id).update(task);
         console.log('Task updated successfully');
     } catch (err) {
         console.log('Could not update task', err);
@@ -23,24 +19,24 @@ async function firUpdateTask(task) {
 
 }
 
-async function firRemoveTask(task) {
+async function firRemoveTask(task, collection) {
     try {
-        await db.collection(taskCollection).doc(task.id).delete();
+        await collectionsDB.doc(collection.id).collection('tasks').doc(task.id).delete();
         console.log('Task removed successfully');
     } catch (err) {
         console.log('Could not remove task', err);
     }
 }
 
-async function firTaskCount(field, operator, value) {
+async function firTaskCount(collection, field, operator, value) {
     try {
-        const snapshot = await db.collection(taskCollection).where(field, operator, value).get();
+        const snapshot = await collectionsDB.doc(collection.id).collection('tasks').where(field, operator, value).get();
         return snapshot.docs.length;
     } catch (err) {
         console.log('Could not count tasks', err);
     }
 }
 
-// function firGetSnapshot() {
-//     return db.collection(taskCollection).get();
-// }
+function firTasksSnapshot(collection) {
+    return collectionsDB.doc(collection.id).collection('tasks').get();
+}

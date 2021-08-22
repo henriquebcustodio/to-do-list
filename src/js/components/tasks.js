@@ -23,7 +23,7 @@ function createTaskElement(task) {
 </li>`);
 };
 
-function addTaskEvents(task, taskElement) {
+function addTaskEvents(task, taskElement, collection) {
     // Creates hovered state for tasks
     taskElement.addEventListener('mouseover', function () {
         if (!onDrag) {
@@ -47,35 +47,35 @@ function addTaskEvents(task, taskElement) {
     // Listens for clicks on the completeTask button
     const completeTaskButton = taskElement.querySelector('.contentTasks__toggleTaskStatus');
     completeTaskButton.addEventListener('click', function () {
-        toggleStatus(task);
+        toggleStatus(task, collection);
         taskElement.classList.remove('hovered');
     });
 
     // Listens for clicks on the deleteTask button
     const deleteTaskButton = taskElement.querySelector('.delete');
     deleteTaskButton.addEventListener('click', function () {
-        deleteTask(taskElement);
+        deleteTask(task, collection);
         taskElement.classList.remove('hovered');
     });
 
     const editTaskButton = taskElement.querySelector('.edit');
     editTaskButton.addEventListener('click', function () {
-        showEditTask(task);
+        showEditTask(task, collection);
     });
 };
 
-async function newTask(taskDescription) {
+async function newTask(taskDescription, collection) {
     // TODO revisar atraso nessa funcao
-    const index = await firTaskCount('isOpen', '==', true);
+    const index = await firTaskCount(collection, 'isOpen', '==', true);
     const task = Task(taskDescription, index);
     const taskElement = createTaskElement(task);
-    addTaskEvents(task, taskElement);
+    addTaskEvents(task, taskElement, collection);
     openTasksList.appendChild(taskElement);
     updateCount();
-    await firPushTask(task);
+    await firPushTask(task, collection);
 }
 
-async function toggleStatus(task) {
+async function toggleStatus(task, collection) {
     const taskElement = document.getElementById(task.id);
     taskElement.remove;
     task.isOpen = !task.isOpen;
@@ -85,29 +85,29 @@ async function toggleStatus(task) {
         completedTasksList.appendChild(taskElement);
     }
     updateCount();
-    task.index = await firTaskCount('isOpen', '==', task.isOpen);
-    await firUpdateTask(task);
-    await updateIndex();
+    task.index = await firTaskCount(collection, 'isOpen', '==', task.isOpen);
+    await firUpdateTask(task, collection);
+    await updateIndex(collection);
 }
 
-async function deleteTask(task) {
+async function deleteTask(task, collection) {
     const taskElement = document.getElementById(task.id);
     taskElement.remove();
     updateCount();
-    await firRemoveTask(task);
-    await updateIndex();
+    await firRemoveTask(task, collection);
+    await updateIndex(collection);
 }
 
 // Updates the index of all tasks on firestore
-async function updateIndex() {
+async function updateIndex(collection) {
     const openTasks = Array.from(openTasksList.children).map(task => task.id);
     const completedTasks = Array.from(completedTasksList.children).map(task => task.id);
-    await updateById(openTasks);
-    await updateById(completedTasks);
+    await updateById(openTasks, collection);
+    await updateById(completedTasks, collection);
 }
 
-async function updateById(idList) {
+async function updateById(idList, collection) {
     for (let id of idList) {
-        await firUpdateTask({ id, index: idList.indexOf(id) });
+        await firUpdateTask({ id, index: idList.indexOf(id) }, collection);
     }
 }

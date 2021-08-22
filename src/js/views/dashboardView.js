@@ -19,22 +19,25 @@ async function renderDashboardView() {
     const newCollectionButton = document.querySelector('#newCollection');
     newCollectionButton.addEventListener('click', showNewCollection);
 
-    collectionsList = document.querySelector('.contentDashboard__collections');
+    collectionsContainer = document.querySelector('.contentDashboard__collections');
 
     await updateDashboard();
 }
 
+function closeDashboardView() {
+    document.querySelector('.contentDashboard').remove();
+}
+
 async function updateDashboard() {
-    const collections = await firGetSnapshot();
-    updateDashboardItems(collections);
-    updateSidebar(collections);
+    const collectionsList = await firCollectionsSnapshot();
+    updateDashboardItems(collectionsList);
 }
 
 function updateDashboardItems(collections) {
     collections.sort((a, b) => a.index - b.index);
     collections.forEach(collection => {
         const collectionElement = createCollectionElement(collection);
-        addCollectionEvents(collectionElement);
-        collectionsList.insertBefore(collectionElement, document.querySelector('#newCollection'));
+        addCollectionEvents(collectionElement, collection);
+        collectionsContainer.insertBefore(collectionElement, document.querySelector('#newCollection'));
     });
 }
