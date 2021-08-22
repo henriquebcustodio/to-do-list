@@ -1,13 +1,7 @@
-// Collapses sidebar
-const menu = document.querySelector('#menu');
+
 const sidebar = document.querySelector('.sidebar');
 const app = document.querySelector('.app');
 const addCollectionSidebar = document.querySelector('.sidebar__add');
-
-menu.addEventListener('click', () => {
-    app.classList.toggle('fullWidth');
-    sidebar.classList.toggle('closed');
-});
 
 addCollectionSidebar.addEventListener('click', showNewCollection);
 
@@ -57,5 +51,6 @@ function createSidebarItemElement(collection) {
 }
 
 function updateSidebar(collections) {
+    collections.sort((a, b) => a.index - b.index);
     collections.forEach(collection => createSidebarItemElement(collection));
 }

@@ -14,6 +14,9 @@ function createDashboardView() {
 }
 
 async function renderDashboardView() {
+
+    dashboardNav.classList.add('active');
+
     document.querySelector('.content__main').appendChild(createDashboardView());
 
     const newCollectionButton = document.querySelector('#newCollection');
@@ -25,6 +28,7 @@ async function renderDashboardView() {
 }
 
 function closeDashboardView() {
+    dashboardNav.classList.remove('active');
     document.querySelector('.contentDashboard').remove();
 }
 

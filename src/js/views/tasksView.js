@@ -52,6 +52,8 @@ function renderTasksView(collection) {
         }
     };
 
+    document.documentElement.style.setProperty('--dynamic-collection-color', collection.color);
+
     document.querySelector('.content__main').appendChild(createTasksView(collection));
 
     // Sortable lists for open and closed tasks
