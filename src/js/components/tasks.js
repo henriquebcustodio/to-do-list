@@ -1,9 +1,9 @@
 function Task(description, index) {
     return {
         id: ID(),
-        description: description,
+        description,
         isOpen: true,
-        index: index
+        index
     };
 }
 
@@ -65,6 +65,7 @@ function addTaskEvents(task, taskElement) {
 };
 
 async function newTask(taskDescription) {
+    // TODO revisar atraso nessa funcao
     const index = await firTaskCount('isOpen', '==', true);
     const task = Task(taskDescription, index);
     const taskElement = createTaskElement(task);

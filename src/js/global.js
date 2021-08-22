@@ -1,0 +1,2 @@
+const colors = ['#ff76a1', '#6fc4be', '#ae67e7', '#dbbe56', '#e39264', '#d25a61', '#9e7f72'];
+const icons = ['shopping_cart', 'schedule', 'account_balance', 'work', 'pets', 'explore', 'label', 'hourglass_empty', 'brush', 'architecture', 'apartment', 'fitness_center', 'school', 'computer', 'person'];

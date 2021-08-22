@@ -3,11 +3,16 @@
     --nav-gray: #20212B;
     --hover-gray: #282934;
     --text-gray: #cfcfcf;
+    --text-gray-dark: #7B7C83;
     --button-gray: #32323F;
     --dark-border: #1d1e26;
     --std-pink: #ff76a1;
     --std-green: #6fc4be;
     --std-purple: #ae67e7;
+    --std-yellow: #dbbe56;
+    --std-orange: #e39264;
+    --std-red: #d25a61;
+    --std-brown: #9e7f72;
     --pink-gradient: linear-gradient(45deg, #ce69e0 0%, #fd9ea9 100%);
 }
 

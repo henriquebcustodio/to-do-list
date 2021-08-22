@@ -59,30 +59,6 @@
                     </div>
                 </div>
                 <div class="sidebar__list">
-                    <a class="sidebar__listItem active flexCenter" href="#">
-                        <div class="sidebar__itemWrapper flexCenter">
-                            <div class="sidebar__iconContainer pink flexCenter">
-                                <i class="material-icons md-20">school</i>
-                            </div>
-                            <span class="sidebar__label">School</span>
-                        </div>
-                    </a>
-                    <a class="sidebar__listItem flexCenter" href="#">
-                        <div class="sidebar__itemWrapper flexCenter">
-                            <div class="sidebar__iconContainer green flexCenter">
-                                <i class="material-icons md-20">person</i>
-                            </div>
-                            <span class="sidebar__label">Personal</span>
-                        </div>
-                    </a>
-                    <a class="sidebar__listItem flexCenter" href="#">
-                        <div class="sidebar__itemWrapper flexCenter">
-                            <div class="sidebar__iconContainer purple flexCenter">
-                                <i class="material-icons md-20">brush</i>
-                            </div>
-                            <span class="sidebar__label">Design</span>
-                        </div>
-                    </a>
                 </div>
             </nav>
             <div class="content flexCenter" data-simplebar>
@@ -91,24 +67,30 @@
             </div>
         </div>
     </div>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script> -->
     <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/OverlayScrollbars.min.js"
-        integrity="sha512-B1xv1CqZlvaOobTbSiJWbRO2iM0iii3wQ/LWnXWJJxKfvIRRJa910sVmyZeOrvI854sLDsFCuFHh4urASj+qgw=="
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/OverlayScrollbars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"
+        integrity="sha512-EZhmSl/hiKyEHklogkakFnSYa5mWsLmTC4ZfvVzhqYNLPbXKAXsjUYRf2O9OlzQN33H0xBVfGSEIUeqt9astHQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
              https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="js/firebase/config.js"></script>
+    <script src="js/firebase/tasksFir.js"></script>
+    <script src="js/firebase/collectionsFir.js"></script>
+    <script src="js/global.js"></script>
     <script src="js/utils/utils.js"></script>
     <script src="js/components/sidebar.js"></script>
     <script src="js/components/tasks.js"></script>
     <script src="js/components/editTask.js"></script>
-    <script src="js/firebase/config.js"></script>
-    <script src="js/firebase/tasksFir.js"></script>
+    <script src="js/components/collection.js"></script>
+    <script src="js/components/newCollection.js"></script>
     <script src="js/views/tasksView.js"></script>
+    <script src="js/views/dashboardView.js"></script>
 
 </body>
 

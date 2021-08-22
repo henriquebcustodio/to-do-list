@@ -1,19 +1,16 @@
-const content = document.querySelector('.content');
-
 function showEditTask(task) {
-    console.log(task.id);
     const element = htmlToElement(`
-    <div class="editTask flexCenter">
-    <div class="editTask__main flexCenter">
-        <textarea class="editTask__text" id="newDescription" maxlength="250" spellcheck="false" rows="1">${task.description}</textarea>
-        <div class="editTask__buttons">
-            <div class="editTask__button save flexCenter">Save</div>
-            <div class="editTask__button cancel flexCenter">Cancel</div>
+    <div class="editTask modalForm flexCenter">
+        <div class="formMain flexCenter">
+            <textarea class="formInput" id="newDescription" maxlength="250" spellcheck="false" rows="1" required>${task.description}</textarea>
+            <div class="formButtons">
+                <div class="formButton save flexCenter">Save</div>
+                <div class="formButton cancel flexCenter">Cancel</div>
+            </div>
         </div>
     </div>
-</div>
     `);
-    content.appendChild(element);
+    document.querySelector('.content').appendChild(element);
     addEditTaskEvents(task, element);
     loadEditTaskScrollbar();
 }
@@ -32,7 +29,7 @@ function addEditTaskEvents(task, editTaskModal) {
 }
 
 function closeEditTask(editTaskModal) {
-    content.removeChild(editTaskModal);
+    editTaskModal.remove();
 }
 
 async function editTask(task) {

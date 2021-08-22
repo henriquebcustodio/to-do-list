@@ -75,6 +75,11 @@ function renderTasksView() {
     updateData();
 }
 
+function closeTasksView() {
+    const tasksView = document.querySelector('.contentTasks');
+    tasksView.remove();
+}
+
 // Gets the task description and sends it to the newTask function
 function addTask() {
     if (taskInput.value) {
