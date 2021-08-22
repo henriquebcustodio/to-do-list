@@ -7,7 +7,6 @@ menuNav.addEventListener('click', () => {
 });
 
 dashboardNav.addEventListener('click', () => {
-    console.log('test');
     if (!dashboardNav.classList.contains('active')) {
         closeTasksView();
         sidebarResetActive();
