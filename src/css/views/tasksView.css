@@ -102,8 +102,8 @@
 
 .contentTasks__newTaskAdd {
     color: #17181F;
-    background-color: var(--std-pink);
-    background: var(--std-pink);
+    background-color: var(--dynamic-collection-color);
+    background: var(--dynamic-collection-color);
     transition: all 0.2s;
 }
 
@@ -184,18 +184,18 @@
 }
 
 .contentTasks__toggleTaskStatus {
-    border: 2.5px solid var(--std-pink);
+    border: 2.5px solid var(--dynamic-collection-color);
     color: var(--nav-gray);
     transition: all 0.2s;
 }
 
 .contentTasks__toggleTaskStatus:hover {
-    background-color: var(--std-pink);
+    background-color: var(--dynamic-collection-color);
     cursor: pointer;
 }
 
 .completed .contentTasks__toggleTaskStatus {
-    background-color: var(--std-pink);
+    background-color: var(--dynamic-collection-color);
     cursor: pointer;
 }
 
