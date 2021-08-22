@@ -53,15 +53,15 @@ function addNewCollectionEvents(newCollectionModal) {
     const iconSelector = newCollectionModal.querySelector('.newCollection__iconWrapper');
     const dropdownMenu = document.querySelector('.newCollection__dropdownContent');
     iconSelector.addEventListener('click', () => {
-        ignoreClick = true;
+        newCollectionIgnoreClick = true;
         dropdownMenu.classList.toggle('visible');
     });
 
     newCollectionModal.querySelector('.formMain').addEventListener('click', () => {
-        if (dropdownMenu.classList.contains('visible') && !ignoreClick) {
+        if (dropdownMenu.classList.contains('visible') && !newCollectionIgnoreClick) {
             dropdownMenu.classList.toggle('visible');
         }
-        ignoreClick = false;
+        newCollectionIgnoreClick = false;
     });
 }
 
