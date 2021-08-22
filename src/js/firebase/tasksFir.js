@@ -28,13 +28,18 @@ async function firRemoveTask(task, collection) {
     }
 }
 
-async function firTaskCount(collection, field, operator, value) {
+async function firTaskCountFilter(collection, field, operator, value) {
     try {
         const snapshot = await collectionsDB.doc(collection.id).collection('tasks').where(field, operator, value).get();
         return snapshot.docs.length;
     } catch (err) {
         console.log('Could not count tasks', err);
     }
+}
+
+async function firTaskCount(collection) {
+    const snapshot = await collectionsDB.doc(collection.id).collection('tasks').get();
+    return snapshot.docs.length;
 }
 
 function firTasksSnapshot(collection) {

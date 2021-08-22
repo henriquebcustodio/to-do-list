@@ -66,7 +66,7 @@ function addTaskEvents(task, taskElement, collection) {
 
 async function newTask(taskDescription, collection) {
     // TODO revisar atraso nessa funcao
-    const index = await firTaskCount(collection, 'isOpen', '==', true);
+    const index = await firTaskCountFilter(collection, 'isOpen', '==', true);
     const task = Task(taskDescription, index);
     const taskElement = createTaskElement(task);
     addTaskEvents(task, taskElement, collection);
@@ -85,7 +85,7 @@ async function toggleStatus(task, collection) {
         completedTasksList.appendChild(taskElement);
     }
     updateCount();
-    task.index = await firTaskCount(collection, 'isOpen', '==', task.isOpen);
+    task.index = await firTaskCountFilter(collection, 'isOpen', '==', task.isOpen);
     await firUpdateTask(task, collection);
     await updateIndex(collection);
 }
