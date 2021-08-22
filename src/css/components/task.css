@@ -1,0 +1,75 @@
+.contentTasks__taskListItem {
+    justify-content: space-between;
+    height: 48px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: var(--nav-gray);
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.contentTasks__taskLeft {
+    justify-content: flex-start;
+    width: 75%;
+    flex-grow: 2;
+}
+
+.contentTasks__taskRight {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 10px;
+    width: 25%;
+    opacity: 0;
+}
+
+.hovered .contentTasks__taskRight {
+    opacity: 1;
+}
+
+.contentTasks__taskRight i {
+    margin-left: 5px;
+    color: var(--text-gray);
+    transition: all 0.2s;
+}
+
+.contentTasks__taskRight i:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.contentTasks__toggleTaskStatus {
+    border: 2.5px solid var(--dynamic-collection-color);
+    color: var(--nav-gray);
+    transition: all 0.2s;
+}
+
+.contentTasks__toggleTaskStatus:hover {
+    background-color: var(--dynamic-collection-color);
+    cursor: pointer;
+}
+
+.completed .contentTasks__toggleTaskStatus {
+    background-color: var(--dynamic-collection-color);
+    cursor: pointer;
+}
+
+.completed .contentTasks__toggleTaskStatus:hover {
+    background-color: var(--nav-gray);
+}
+
+.contentTasks__taskText {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    color: white;
+    margin-left: 10px;
+}
+
+.completed .contentTasks__taskText {
+    text-decoration: line-through;
+}
