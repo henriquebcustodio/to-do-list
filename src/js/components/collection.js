@@ -57,9 +57,12 @@ function progressCircle(container) {
 async function newCollection(name, color, icon) {
     const collection = Collection(name, color, icon);
     const collectionElement = createCollectionElement(collection);
-    collectionsContainer.insertBefore(collectionElement, document.querySelector('#newCollection'));
-    addCollectionEvents(collectionElement, collection);
-    createSidebarItemElement(collection);
-    collection.index = await firCollectionCount();
-    await firPushCollection(collection);
+    try {
+        collectionsContainer.insertBefore(collectionElement, document.querySelector('#newCollection'));
+        addCollectionEvents(collectionElement, collection);
+    } finally {
+        createSidebarItemElement(collection);
+        collection.index = await firCollectionCount();
+        await firPushCollection(collection);
+    }
 }
