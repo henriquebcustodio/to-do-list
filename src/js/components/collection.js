@@ -54,7 +54,7 @@ async function loadCollectionStats(collectionElement, collection) {
     } else if (allTasks > 0 && percentComplete !== 1) {
         stats.innerText = `${closedTasks}/${allTasks} done`;
     } else {
-        stats.innerText = `All ${allTasks} done!`;
+        stats.innerText = `All done!`;
     }
     stats.classList.remove('loading');
 }
