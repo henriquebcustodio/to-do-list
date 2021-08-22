@@ -41,6 +41,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
     color: var(--text-gray);
 }
 
@@ -55,12 +56,15 @@
 }
 
 .contentTasks__headerRight {
-    display: inline-block;
+    display: flex;
+    position: relative;
   }
   
 .contentTasks__dropdownContent {
     display: none;
     position: absolute;
+    top: 25px;
+    right: 0;
     background-color: var(--nav-gray);
     overflow: hidden;
     border-radius: 5px;
@@ -77,7 +81,7 @@
     background-color: var(--hover-gray);
 }
 
-.contentTasks__headerRight:hover .contentTasks__dropdownContent  {
+.contentTasks__headerRight i.active ~ .contentTasks__dropdownContent  {
     display: block;
 }
 
@@ -91,8 +95,6 @@
     border: 2px solid var(--dark-border);
     box-sizing: border-box;
 }
-
-
 
 .contentTasks__newTaskAdd {
     color: #17181F;
