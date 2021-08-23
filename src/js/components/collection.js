@@ -95,6 +95,7 @@ async function editCollection(collection) {
     const collections = await firCollectionsSnapshot();
     renderTasksView(collection);
     updateSidebar(collections);
+    sidebarSetActive(collection.index, collection);
     loadingOverlay.classList.remove('visible');
 }
 

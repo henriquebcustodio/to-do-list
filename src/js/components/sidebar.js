@@ -30,14 +30,14 @@ function sidebarSetActive(index, collection) {
 
 function createSidebarItemElement(collection) {
     const element = htmlToElement(`
-    <a class="sidebar__listItem flexCenter" id="${collection.id}" href="#">
+    <div class="sidebar__listItem flexCenter" id="${collection.id}">
         <div class="sidebar__itemWrapper flexCenter">
             <div class="sidebar__iconContainer flexCenter" style="background-color:${collection.color}">
                 <i class="material-icons md-20">${collection.icon}</i>
             </div>
             <span class="sidebar__label">${collection.name}</span>
         </div>
-    </a>
+    </div>
     `);
     document.querySelector('.sidebar__list').appendChild(element);
     element.addEventListener('click', () => {
