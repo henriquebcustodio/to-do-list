@@ -1,8 +1,11 @@
 @import 'base.css';
-@import './components/content.css';
 @import './components/navbar.css';
 @import './components/sidebar.css';
+@import './utils/formStyles.css';
+@import './components/task.css';
 @import './components/editTask.css';
-
-
-
+@import './components/collection.css';
+@import './components/newCollection.css';
+@import './components/content.css';
+@import './views/tasksView.css';
+@import './views/dashboardView.css'
