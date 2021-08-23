@@ -3,7 +3,9 @@ const sidebar = document.querySelector('.sidebar');
 const app = document.querySelector('.app');
 const addCollectionSidebar = document.querySelector('.sidebar__add');
 
-addCollectionSidebar.addEventListener('click', showNewCollection);
+addCollectionSidebar.addEventListener('click', () => {
+    showNewCollection();
+});
 
 // Changes sidebar active item
 function sidebarListActive(element, collection) {
@@ -28,7 +30,7 @@ function sidebarSetActive(index, collection) {
 
 function createSidebarItemElement(collection) {
     const element = htmlToElement(`
-    <a class="sidebar__listItem flexCenter ${collection.id}" href="#">
+    <a class="sidebar__listItem flexCenter" id="${collection.id}" href="#">
         <div class="sidebar__itemWrapper flexCenter">
             <div class="sidebar__iconContainer flexCenter" style="background-color:${collection.color}">
                 <i class="material-icons md-20">${collection.icon}</i>
@@ -48,6 +50,15 @@ function createSidebarItemElement(collection) {
         }
         sidebarListActive(element, collection);
     });
+}
+
+function removeSidebarItem(index) {
+    sidebarResetActive();
+    document.querySelector('.sidebar__list').children[index].remove();
+}
+
+function clearSidebar() {
+    document.querySelector('.sidebar__list').innerHTML = '';
 }
 
 function updateSidebar(collections) {

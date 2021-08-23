@@ -90,6 +90,13 @@ async function toggleStatus(task, collection) {
     await updateIndex(collection);
 }
 
+async function editTask(task, collection, newDescription) {
+    task.description = newDescription;
+    const taskElementText = document.getElementById(task.id).querySelector('.contentTasks__taskText');
+    taskElementText.innerText = newDescription;
+    await firUpdateTask(task, collection);
+};
+
 async function deleteTask(task, collection) {
     const taskElement = document.getElementById(task.id);
     taskElement.remove();

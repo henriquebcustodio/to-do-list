@@ -10,12 +10,30 @@ async function firPushCollection(collection) {
     }
 }
 
+async function firUpdateCollection(collection) {
+    try {
+        await collectionsDB.doc(collection.id).update(collection);
+        console.log('Collection updated successfully');
+    } catch (err) {
+        console.log('Could not update collection', err);
+    }
+}
+
+async function firRemoveCollection(collection) {
+    try {
+        await collectionsDB.doc(collection.id).delete();
+        console.log('Collection removed successfully');
+    } catch (err) {
+        console.log('Could not remove collection', err);
+    }
+}
+
 async function firCollectionCount() {
     try {
         const snapshot = await collectionsDB.get();
         return snapshot.docs.length;
     } catch (err) {
-        console.log('Could not count tasks', err);
+        console.log('Could not count collections', err);
     }
 }
 

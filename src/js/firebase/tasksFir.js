@@ -16,7 +16,6 @@ async function firUpdateTask(task, collection) {
     } catch (err) {
         console.log('Could not update task', err);
     }
-
 }
 
 async function firRemoveTask(task, collection) {

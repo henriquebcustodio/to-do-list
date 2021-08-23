@@ -4,9 +4,8 @@
     justify-content: flex-start;
     background-color: var(--nav-gray);
     height: 100%;
-    width: 25%;
-    min-width: 165px;
-    max-width: 225px;
+    width: 225px;
+    min-width: 225px;
     overflow: auto;
     transition: width 0.4s, min-width 0.4s;
 }

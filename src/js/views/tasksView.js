@@ -13,8 +13,8 @@ function createTasksView(collection) {
             <div class="contentTasks__headerRight">
                 <i class="material-icons" id="dotMenu">more_horiz</i>
                 <div class="contentTasks__dropdownContent">
-                    <div>Edit Collection</div>
-                    <div>Delete Collection</div>
+                    <div id="editCollection">Edit Collection</div>
+                    <div id="deleteCollection">Delete Collection</div>
                 </div>
             </div>
         </div>
@@ -89,16 +89,19 @@ function loadTasksViewEvents(collection) {
 
     const dotMenu = document.querySelector('#dotMenu');
     dotMenu.addEventListener('click', () => {
-        // tasksViewIgnoreClick = true;
         dotMenu.classList.toggle('active');
     });
 
-    // document.querySelector('.container').addEventListener('click', () => {
-    //     if (dotMenu.classList.contains('active') && !tasksViewIgnoreClick) {
-    //         dotMenu.classList.toggle('active');
-    //     }
-    //     tasksViewIgnoreClick = false;
-    // });
+    const deleteCollectionButton = document.querySelector('#deleteCollection');
+    deleteCollectionButton.addEventListener('click', () => {
+        deleteCollection(collection);
+    });
+
+    const editCollectionButton = document.querySelector('#editCollection');
+    editCollectionButton.addEventListener('click', () => {
+        showNewCollection(collection);
+        dotMenu.classList.toggle('active');
+    });
 }
 
 function closeTasksView() {

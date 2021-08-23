@@ -23,7 +23,8 @@ function addEditTaskEvents(task, editTaskModal, collection) {
 
     const save = editTaskModal.querySelector('.save');
     save.addEventListener('click', () => {
-        editTask(task, collection);
+        const newDescription = document.getElementById('newDescription').value;
+        editTask(task, collection, newDescription);
         closeEditTask(editTaskModal);
     });
 }
@@ -31,14 +32,6 @@ function addEditTaskEvents(task, editTaskModal, collection) {
 function closeEditTask(editTaskModal) {
     editTaskModal.remove();
 }
-
-async function editTask(task, collection) {
-    const newDescription = document.getElementById('newDescription').value;
-    const taskElementText = document.getElementById(task.id).querySelector('.contentTasks__taskText');
-    task.description = newDescription;
-    taskElementText.innerText = newDescription;
-    await firUpdateTask(task, collection);
-};
 
 function loadEditTaskScrollbar() {
     const editTaskText = document.getElementById('newDescription');

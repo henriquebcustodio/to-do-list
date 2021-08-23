@@ -27,7 +27,9 @@ async function renderDashboardView() {
 
 function loadDashboardViewEvents() {
     const newCollectionButton = document.querySelector('#newCollection');
-    newCollectionButton.addEventListener('click', showNewCollection);
+    newCollectionButton.addEventListener('click', () => {
+        showNewCollection();
+    });
 }
 
 function closeDashboardView() {

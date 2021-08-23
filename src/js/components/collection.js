@@ -79,9 +79,43 @@ async function newCollection(name, color, icon) {
     try {
         collectionsContainer.insertBefore(collectionElement, document.querySelector('#newCollection'));
         addCollectionEvents(collectionElement, collection);
+        loadCollectionStats(collectionElement, collection);
     } finally {
         createSidebarItemElement(collection);
         collection.index = await firCollectionCount();
         await firPushCollection(collection);
+    }
+}
+
+async function editCollection(collection) {
+    loadingOverlay.classList.add('visible');
+    await firUpdateCollection(collection);
+    closeTasksView();
+    clearSidebar();
+    const collections = await firCollectionsSnapshot();
+    renderTasksView(collection);
+    updateSidebar(collections);
+    loadingOverlay.classList.remove('visible');
+}
+
+async function deleteCollection(collection) {
+    loadingOverlay.classList.add('visible');
+    removeSidebarItem(collection.index);
+    await firRemoveCollection(collection);
+    await updateCollectionIndexes();
+    closeTasksView();
+    await renderDashboardView();
+    loadingOverlay.classList.remove('visible');
+}
+
+async function updateCollectionIndexes() {
+    const sidebarList = document.querySelector('.sidebar__list');
+    const collectionsIdList = Array.from(sidebarList.children).map(collection => collection.id);
+    await updateCollectionById(collectionsIdList);
+}
+
+async function updateCollectionById(collectionsIdList) {
+    for (let id of collectionsIdList) {
+        await firUpdateCollection({ id, index: collectionsIdList.indexOf(id) });
     }
 }
