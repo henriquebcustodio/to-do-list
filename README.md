@@ -8,11 +8,14 @@ A To Do List app where users can create, edit, delete and move tasks. Users can 
 
 <p><i>All credits of this design goes to Oliver Cederborg. You can find more of his amazing work on <a href="https://dribbble.com/oliver">Dribbble</a>.</i></p>
 
-# Technologies (so far)
-- HTML
-- CSS
-- Javascript
-- Firebase
+# Technologies
+<div style="display: inline_block"><br>
+  <img align="center" alt="Js" height="60" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="HTML" height="60" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="CSS" height="60" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+  <img align="center" alt="Node" height="60" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-plain.svg">
+  <img align="center" alt="Firebase" height="60" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain-wordmark.svg">
+</div>
 
 # Screenshots
 ![image](https://user-images.githubusercontent.com/77708400/129492776-f68a1910-d020-4f6b-a452-7fc39ebed65c.png)
