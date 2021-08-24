@@ -5,14 +5,14 @@ function createTasksView(collection) {
     <div class="contentTasks">
         <div class="contentTasks__header">
             <div class="contentTasks__headerLeft">
-                <a href="#" class="contentTasks__returnButton">
+                <div class="contentTasks__returnButton">
                     <i class="material-icons md-30">chevron_left</i>
-                </a>
+                </div>
                 <span class="header__title">${collection.name}</span>
             </div>
             <div class="contentTasks__headerRight">
-                <i class="material-icons" id="dotMenu">more_horiz</i>
-                <div class="contentTasks__dropdownContent">
+                <i class="material-icons">more_horiz</i>
+                <div class="contentTasks__dropdownContent dropdown">
                     <div id="editCollection">Edit Collection</div>
                     <div id="deleteCollection">Delete Collection</div>
                 </div>
@@ -87,20 +87,23 @@ function loadTasksViewEvents(collection) {
         sidebarResetActive();
     });
 
-    const dotMenu = document.querySelector('#dotMenu');
-    dotMenu.addEventListener('click', () => {
-        dotMenu.classList.toggle('active');
+    const dotMenu = document.querySelector('.contentTasks__headerRight i');
+    const dropdownMenu = document.querySelector('.contentTasks__dropdownContent');
+    dotMenu.addEventListener('click', e => {
+        dropdownMenu.classList.toggle('active');
+        e.stopPropagation();
     });
 
     const deleteCollectionButton = document.querySelector('#deleteCollection');
     deleteCollectionButton.addEventListener('click', () => {
         deleteCollection(collection);
+        dropdownMenu.classList.toggle('active');
     });
 
     const editCollectionButton = document.querySelector('#editCollection');
     editCollectionButton.addEventListener('click', () => {
         showNewCollection(collection);
-        dotMenu.classList.toggle('active');
+        dropdownMenu.classList.toggle('active');
     });
 }
 

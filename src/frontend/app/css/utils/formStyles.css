@@ -25,7 +25,8 @@
     font-size: 15px;
     color: var(--text-gray);
     overflow: visible;
-    min-height: 50px;
+    height: 50px;
+    /* min-height: 50px; */
     width: 100%;
     box-sizing: border-box;
     padding: 13px;
@@ -67,3 +68,12 @@
     background-color: var(--button-gray);
 }
 
+@media screen and (max-width: 738px) {
+    .formMain {
+        min-width: 0;
+        width: 100%;
+        margin: 0;
+        height: 100%;
+        border-radius: 0;
+    }
+}

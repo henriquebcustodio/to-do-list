@@ -1,0 +1,28 @@
+.content {
+    flex-grow: 2;
+    width: 75%;
+    padding: 0 25px;
+    background-color: var(--dark-background);
+}
+
+.content .simplebar-content {
+    display: flex;
+    justify-content: center;
+}
+
+.content__main {
+    width: 60%;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 1200px) {
+    .content__main {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .content__main {
+        width: 100%;
+    }
+}

@@ -2,7 +2,7 @@ function showEditTask(task, collection) {
     const element = htmlToElement(`
     <div class="editTask modalForm flexCenter">
         <div class="formMain flexCenter">
-            <textarea class="formInput" id="newDescription" maxlength="250" spellcheck="false" rows="1" required>${task.description}</textarea>
+            <input class="formInput" id="newDescription" maxlength="250" spellcheck="false" value="${task.description}" required></input>
             <div class="formButtons">
                 <div class="formButton save flexCenter">Save</div>
                 <div class="formButton cancel flexCenter">Cancel</div>
@@ -12,7 +12,6 @@ function showEditTask(task, collection) {
     `);
     document.querySelector('.content').appendChild(element);
     addEditTaskEvents(task, element, collection);
-    loadEditTaskScrollbar();
 }
 
 function addEditTaskEvents(task, editTaskModal, collection) {
@@ -31,14 +30,5 @@ function addEditTaskEvents(task, editTaskModal, collection) {
 
 function closeEditTask(editTaskModal) {
     editTaskModal.remove();
-}
-
-function loadEditTaskScrollbar() {
-    const editTaskText = document.getElementById('newDescription');
-    OverlayScrollbars(editTaskText, {
-        textarea: {
-            dynHeight: true
-        }
-    });
 }
 

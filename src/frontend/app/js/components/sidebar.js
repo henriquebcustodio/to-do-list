@@ -1,6 +1,5 @@
 
 const sidebar = document.querySelector('.sidebar');
-const app = document.querySelector('.app');
 const addCollectionSidebar = document.querySelector('.sidebar__add');
 
 addCollectionSidebar.addEventListener('click', () => {
@@ -57,11 +56,17 @@ function removeSidebarItem(index) {
     document.querySelector('.sidebar__list').children[index].remove();
 }
 
-function clearSidebar() {
-    document.querySelector('.sidebar__list').innerHTML = '';
+async function loadSideBar() {
+    const collectionsList = await firCollectionsSnapshot();
+    updateSidebar(collectionsList);
 }
 
 function updateSidebar(collections) {
     collections.sort((a, b) => a.index - b.index);
     collections.forEach(collection => createSidebarItemElement(collection));
 }
+
+function clearSidebar() {
+    document.querySelector('.sidebar__list').innerHTML = '';
+}
+

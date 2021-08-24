@@ -44,18 +44,9 @@
     transition: all 0.2s;
 }
 
-.contentTasks__toggleTaskStatus:hover {
-    background-color: var(--dynamic-collection-color);
-    cursor: pointer;
-}
-
 .completed .contentTasks__toggleTaskStatus {
     background-color: var(--dynamic-collection-color);
     cursor: pointer;
-}
-
-.completed .contentTasks__toggleTaskStatus:hover {
-    background-color: var(--nav-gray);
 }
 
 .contentTasks__taskText {

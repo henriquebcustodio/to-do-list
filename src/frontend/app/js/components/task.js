@@ -19,6 +19,7 @@ function createTaskElement(task) {
     <div class="contentTasks__taskRight flexCenter">
         <i class="material-icons md-18 edit">edit</i>
         <i class="material-icons md-18 delete">delete</i>
+        <i class="material-icons md-24">more_vert</i>
     </div>
 </li>`);
 };

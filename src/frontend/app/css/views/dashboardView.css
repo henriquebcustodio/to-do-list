@@ -1,3 +1,8 @@
+.contentDashboard {
+    flex-direction: column;
+    margin-left: 20px;
+}
+
 .contentDashboard__collections {
     display: flex;
     flex-wrap: wrap;
@@ -17,6 +22,7 @@
     background-color: transparent;
     border: 2px solid var(--hover-gray);
     height: 80px;
+    margin-right: auto;
 }
 
 #newCollection i {
@@ -27,4 +33,10 @@
 
 #newCollection:hover {
     background-color: var(--hover-gray);
+}
+
+@media screen and (max-width: 450px) {
+    .contentDashboard {
+        margin-left: 0;
+    }
 }

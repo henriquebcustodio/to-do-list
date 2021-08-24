@@ -81,7 +81,7 @@
     background-color: var(--hover-gray);
 }
 
-.contentTasks__headerRight i.active ~ .contentTasks__dropdownContent  {
+.contentTasks__dropdownContent.active  {
     display: block;
 }
 

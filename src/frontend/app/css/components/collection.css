@@ -74,3 +74,21 @@
     width: 22px;
     height: 22px;
 }
+
+@media screen and (max-width: 738px) {
+    .contentDashboard__collectionItem {
+        flex-basis: calc(50% - 20px)
+    }
+
+    .contentDashboard__collectionItem:nth-of-type(2n+2) {
+        margin-right: 0;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .contentDashboard__collectionItem {
+        margin-right: 0;
+        flex-basis: 100%
+    }
+}
