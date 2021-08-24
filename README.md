@@ -1,5 +1,5 @@
 # About
-A To Do List app where users can create, edit, delete and move tasks. Users can also create collections of tasks.
+A To Do List app where users can create, edit, delete and move tasks. Users can also perfom CRUD operations on collections of tasks.
 
 # Goal
 <p>Create an app from scratch <b>inspired</b> on <a href="https://dribbble.com/shots/15185058-Collection-Tasks">Oliver Cederborg's design</a>:</p>
