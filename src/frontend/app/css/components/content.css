@@ -11,14 +11,9 @@
 }
 
 .content__main {
-    width: 60%;
+    width: 80%;
+    max-width: 1000px;
     margin-bottom: 50px;
-}
-
-@media (max-width: 1200px) {
-    .content__main {
-        width: 80%;
-    }
 }
 
 @media screen and (max-width: 1200px) {
