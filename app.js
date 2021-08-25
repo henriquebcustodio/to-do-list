@@ -13,6 +13,6 @@ app.get('/', (req, res) => {
     res.render('app');
 });
 
-app.listen(process.env.port || 3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('listening on port 3000	');
 });
