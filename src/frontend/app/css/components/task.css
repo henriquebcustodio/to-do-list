@@ -11,7 +11,7 @@
 
 .task__left {
     justify-content: flex-start;
-    width: 75%;
+    width: 80%;
     flex-grow: 2;
 }
 
@@ -20,7 +20,6 @@
     justify-content: flex-end;
     position: relative;
     margin-left: 10px;
-    width: 25%;
     opacity: 1;
 }
 
