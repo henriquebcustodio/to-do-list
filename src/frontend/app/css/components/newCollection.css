@@ -48,7 +48,7 @@
     color: white;
 }
 
-.newCollection__dropdownContent {
+.newCollection__dropDownContent {
     display: none;
     position: absolute;
     overflow: auto;
@@ -60,7 +60,7 @@
     padding: 15px;
 }
 
-.newCollection__dropdownContent.visible{
+.newCollection__dropDownContent.visible{
     display: block;
 }
 
@@ -73,13 +73,13 @@
     cursor: pointer;
 }
 
-.newCollection__dropdownContent i {
+.newCollection__dropDownContent i {
     padding: 3px;
     cursor: pointer;
     transition: all 0.2s;
 }
 
-.newCollection__dropdownContent i:hover {
+.newCollection__dropDownContent i:hover {
     transform: translateY(-2px);
 }
 

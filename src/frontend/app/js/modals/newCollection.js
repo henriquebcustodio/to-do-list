@@ -27,7 +27,7 @@ function showNewCollection(collection) {
                 <div class="newCollection__iconWrapper flexCenter">
                     <i class="material-icons">${icon}</i>
                 </div>
-                <div class="newCollection__dropdownContent">
+                <div class="newCollection__dropDownContent">
                 </div>
             </div>
             <div class="newCollection__label">
@@ -65,15 +65,15 @@ function addNewCollectionEvents(newCollectionModal, collection) {
     });
 
     const iconSelector = newCollectionModal.querySelector('.newCollection__iconWrapper');
-    const dropdownMenu = document.querySelector('.newCollection__dropdownContent');
+    const dropDownMenu = document.querySelector('.newCollection__dropDownContent');
     iconSelector.addEventListener('click', () => {
         newCollectionIgnoreClick = true;
-        dropdownMenu.classList.toggle('visible');
+        dropDownMenu.classList.toggle('visible');
     });
 
     newCollectionModal.querySelector('.formMain').addEventListener('click', () => {
-        if (dropdownMenu.classList.contains('visible') && !newCollectionIgnoreClick) {
-            dropdownMenu.classList.toggle('visible');
+        if (dropDownMenu.classList.contains('visible') && !newCollectionIgnoreClick) {
+            dropDownMenu.classList.toggle('visible');
         }
         newCollectionIgnoreClick = false;
     });
@@ -84,10 +84,10 @@ function closeNewCollection(newCollectionModal) {
 }
 
 function loadIcons() {
-    const dropdownMenu = document.querySelector('.newCollection__dropdownContent');
+    const dropDownMenu = document.querySelector('.newCollection__dropDownContent');
     icons.forEach(iconName => {
         const iconElement = htmlToElement(`<i class="material-icons md-24">${iconName}</i>`);
-        dropdownMenu.appendChild(iconElement);
+        dropDownMenu.appendChild(iconElement);
         iconElement.addEventListener('click', () => {
             document.querySelector('.newCollection__iconWrapper i').innerHTML = iconElement.innerHTML;
         });

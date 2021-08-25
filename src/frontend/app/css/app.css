@@ -2,6 +2,7 @@
 @import './components/navbar.css';
 @import './components/sidebar.css';
 @import './utils/formStyles.css';
+@import './utils/dropDown.css';
 @import './components/task.css';
 @import './components/editTask.css';
 @import './components/collection.css';

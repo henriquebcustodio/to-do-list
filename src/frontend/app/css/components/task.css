@@ -1,4 +1,4 @@
-.contentTasks__taskListItem {
+.task {
     justify-content: space-between;
     height: 48px;
     box-sizing: border-box;
@@ -9,50 +9,47 @@
     cursor: pointer;
 }
 
-.contentTasks__taskLeft {
+.task__left {
     justify-content: flex-start;
     width: 75%;
     flex-grow: 2;
 }
 
-.contentTasks__taskRight {
+.task__right {
     display: flex;
     justify-content: flex-end;
+    position: relative;
     margin-left: 10px;
     width: 25%;
-    opacity: 0;
-}
-
-.hovered .contentTasks__taskRight {
     opacity: 1;
 }
 
-.contentTasks__taskRight i {
+.task__right i {
     margin-left: 5px;
     color: var(--text-gray);
     transition: all 0.2s;
 }
 
-.contentTasks__taskRight i:hover {
+.task__right i:hover {
     color: white;
     transform: translateY(-2px);
 }
 
-.contentTasks__toggleTaskStatus {
+.task__toggleStatus {
     border: 2.5px solid var(--dynamic-collection-color);
     color: var(--nav-gray);
     transition: all 0.2s;
 }
 
-.completed .contentTasks__toggleTaskStatus {
+.completed .task__toggleStatus {
     background-color: var(--dynamic-collection-color);
     cursor: pointer;
 }
 
-.contentTasks__taskText {
+.task__text {
     font-family: inherit;
-    font-weight: 500;
-    font-size: 15px;
+    font-weight: 600;
+    font-size: 16px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -61,6 +58,6 @@
     margin-left: 10px;
 }
 
-.completed .contentTasks__taskText {
+.completed .task__text {
     text-decoration: line-through;
 }

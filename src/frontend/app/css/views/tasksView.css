@@ -58,33 +58,8 @@
 .contentTasks__headerRight {
     display: flex;
     position: relative;
-  }
+}
   
-.contentTasks__dropdownContent {
-    display: none;
-    position: absolute;
-    top: 25px;
-    right: 0;
-    background-color: var(--nav-gray);
-    overflow: hidden;
-    border-radius: 5px;
-    min-width: 160px;
-    z-index: 1;
-}
-
-.contentTasks__dropdownContent div {
-    padding: 7px 15px;
-    cursor: pointer;
-}
-
-.contentTasks__dropdownContent div:hover {
-    background-color: var(--hover-gray);
-}
-
-.contentTasks__dropdownContent.active  {
-    display: block;
-}
-
 .contentTasks__newTask {
     display: flex;
     align-items: center;

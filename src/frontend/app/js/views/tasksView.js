@@ -12,7 +12,7 @@ function createTasksView(collection) {
             </div>
             <div class="contentTasks__headerRight">
                 <i class="material-icons">more_horiz</i>
-                <div class="contentTasks__dropdownContent dropdown">
+                <div class="contentTasks__dropDownContent dropDown">
                     <div id="editCollection">Edit Collection</div>
                     <div id="deleteCollection">Delete Collection</div>
                 </div>
@@ -88,22 +88,25 @@ function loadTasksViewEvents(collection) {
     });
 
     const dotMenu = document.querySelector('.contentTasks__headerRight i');
-    const dropdownMenu = document.querySelector('.contentTasks__dropdownContent');
+    const dropDownMenu = document.querySelector('.contentTasks__dropDownContent');
     dotMenu.addEventListener('click', e => {
-        dropdownMenu.classList.toggle('active');
+        document.querySelectorAll('.dropDown').forEach(dropDown => {
+            dropDown.classList.remove('active');
+        });
+        dropDownMenu.classList.add('active');
         e.stopPropagation();
     });
 
     const deleteCollectionButton = document.querySelector('#deleteCollection');
     deleteCollectionButton.addEventListener('click', () => {
         deleteCollection(collection);
-        dropdownMenu.classList.toggle('active');
+        dropDownMenu.classList.toggle('active');
     });
 
     const editCollectionButton = document.querySelector('#editCollection');
     editCollectionButton.addEventListener('click', () => {
         showNewCollection(collection);
-        dropdownMenu.classList.toggle('active');
+        dropDownMenu.classList.toggle('active');
     });
 }
 
