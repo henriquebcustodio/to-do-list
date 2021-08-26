@@ -9,6 +9,19 @@
     cursor: pointer;
 }
 
+/* Removes the "ghost" element while sorting */
+.sortable-drag {
+    opacity: 0;
+}
+
+.sortable-fallback {
+    display: none;
+}
+
+.sortable-chosen {
+    border: 2px solid var(--hover-gray);
+}
+
 .task__left {
     justify-content: flex-start;
     width: 80%;
@@ -40,9 +53,17 @@
     transition: all 0.2s;
 }
 
+.task__toggleStatus i {
+    display: none;
+}
+
 .completed .task__toggleStatus {
     background-color: var(--dynamic-collection-color);
     cursor: pointer;
+}
+
+.completed .task__toggleStatus i{
+    display: inline;
 }
 
 .task__text {

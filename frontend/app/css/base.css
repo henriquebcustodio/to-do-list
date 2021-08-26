@@ -13,7 +13,8 @@
 }
 
 * {
-    margin: 0
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 html, body {
     height: 100vh
@@ -80,11 +81,6 @@ body {
     color: white;
     font-weight: 700;
     font-size: 30px;
-}
-
-/* Removes the "ghost" element while sorting */
-.sortable-drag {
-    opacity: 0;
 }
 
 .os-theme-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {

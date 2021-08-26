@@ -43,8 +43,13 @@ function createTasksView(collection) {
 function renderTasksView(collection) {
 
     const sortableOptions = {
+        delay: 250,
+        delayOnTouchOnly: true,
         animation: 350,
         dragClass: 'sortable-drag',
+        onStart: evt => {
+            navigator.vibrate(30);
+        },
         onEnd: function (evt) {
             if (evt.newIndex !== evt.oldIndex) {
                 updateIndex(collection);
