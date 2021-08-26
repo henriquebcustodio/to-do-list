@@ -43,7 +43,7 @@ function createTasksView(collection) {
 function renderTasksView(collection) {
 
     const sortableOptions = {
-        delay: 0.5,
+        delay: 500,
         delayOnTouchOnly: true,
         animation: 350,
         dragClass: 'sortable-drag',
