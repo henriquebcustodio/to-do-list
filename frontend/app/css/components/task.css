@@ -1,0 +1,83 @@
+.task {
+    justify-content: space-between;
+    height: 48px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: var(--nav-gray);
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Removes the "ghost" element while sorting */
+.sortable-drag {
+    opacity: 0;
+}
+
+.sortable-fallback {
+    display: none;
+}
+
+.sortable-chosen {
+    border: 2px solid var(--hover-gray);
+}
+
+.task__left {
+    justify-content: flex-start;
+    width: 80%;
+    flex-grow: 2;
+}
+
+.task__right {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    margin-left: 10px;
+    opacity: 1;
+}
+
+.task__right i {
+    margin-left: 5px;
+    color: var(--text-gray);
+    transition: all 0.2s;
+}
+
+.task__right i:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.task__toggleStatus {
+    border: 2.5px solid var(--dynamic-collection-color);
+    color: var(--nav-gray);
+    transition: all 0.2s;
+}
+
+.task__toggleStatus i {
+    display: none;
+}
+
+.completed .task__toggleStatus {
+    background-color: var(--dynamic-collection-color);
+    cursor: pointer;
+}
+
+.completed .task__toggleStatus i{
+    display: inline;
+}
+
+.task__text {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    color: white;
+    margin-left: 10px;
+}
+
+.completed .task__text {
+    text-decoration: line-through;
+}
