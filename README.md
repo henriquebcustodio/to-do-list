@@ -1,5 +1,5 @@
 # About
-A To Do List app where users can create, edit, delete and move tasks. Users can also perfom CRUD operations on collections of tasks.<br>
+A to do list where users can create, edit, delete and move tasks. Users can also perfom CRUD operations on collections of tasks.<br>
 You can access it <a href="https://tsks-app.herokuapp.com/">here</a>!
 
 # Goal
