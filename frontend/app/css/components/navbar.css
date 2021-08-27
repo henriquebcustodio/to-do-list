@@ -60,16 +60,10 @@
     font-size: 16px;
 }
 
-#avatar {
-    overflow: hidden;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
- 
 #avatar img {
     width: 30px;
     height: 30px;
+    border-radius: 100%;
 }
 
 @media (max-width: 900px) {

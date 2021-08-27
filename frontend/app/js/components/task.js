@@ -11,13 +11,13 @@ function createTaskElement(task) {
     return htmlToElement(`
     <li class="task flexCenter" id="${task.id}">
         <div class="task__left flexCenter">
-            <div class="task__toggleStatus smallBox flexCenter">
+            <div class="task__toggleStatus smallBox flexCenter noDrag">
                 <i class="material-icons md-18">done</i>
             </div>
             <span class="task__text">${task.description}</span>
         </div>
         <div class="task__right flexCenter">
-            <i class="material-icons md-24">more_vert</i>
+            <i class="material-icons md-24 noDrag">more_vert</i>
             <div class="task__dropDownContent dropDown">
                 <div class="editTask">Edit</div>
                 <div class="deleteTask">Delete</div>
