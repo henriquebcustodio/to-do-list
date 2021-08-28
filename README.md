@@ -14,8 +14,10 @@ You can access it <a href="https://tsks-app.herokuapp.com/">here</a>!
 # Goal
 <p>Create an app from scratch <b>inspired</b> on <a href="https://dribbble.com/shots/15185058-Collection-Tasks">Oliver Cederborg's design</a>:</p>
 
-![mockup](https://user-images.githubusercontent.com/77708400/129491876-ff60d5ee-9134-404a-87d4-472e9d7225b3.png)
+![image](https://user-images.githubusercontent.com/77708400/131205901-733dbf34-ec96-48c3-b0e8-edeca2b1e6fa.png)
 
 ![image](https://user-images.githubusercontent.com/77708400/131197359-1ff372ea-1331-464b-a8eb-bf50bdfa7445.png)
+
+![mockup](https://user-images.githubusercontent.com/77708400/129491876-ff60d5ee-9134-404a-87d4-472e9d7225b3.png)
 
 <p><i>All credits of this design goes to Oliver Cederborg. You can find more of his amazing work on <a href="https://dribbble.com/oliver">Dribbble</a>.</i></p>
