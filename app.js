@@ -10,6 +10,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'frontend')));
 
 app.get('/', (req, res) => {
+    res.render('home');
+});
+
+app.get('/app', (req, res) => {
     res.render('app');
 });
 

@@ -1,0 +1,10 @@
+$xl: 1200px;
+$l: 900px;
+$m: 738px;
+$s: 420px;
+
+@mixin responsive($query) {
+    @media screen and (max-width: $query) {
+        @content
+    }
+}
