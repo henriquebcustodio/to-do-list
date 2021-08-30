@@ -248,7 +248,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.app {
+.home {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -291,7 +291,7 @@
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center bottom -25px;
-  background-image: url("../assets/hero-app-preview.png");
+  background-image: url("../../public/assets/hero-app-preview.png");
 }
 
 @media screen and (max-width: 1200px) {
