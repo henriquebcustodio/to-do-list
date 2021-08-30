@@ -6,20 +6,33 @@
     color: white;
 
     &__header {
+        display: block;
+        width: 100%;
         font-family: $inter;
         font-weight: $bold;
-        font-size: 50px;
-        margin-bottom: 28px;
+        font-size: $font-size-header;
+        margin: 28px 0;
+        text-align: center;
 
         &--pink {
+            display: inline;
             color: $pink;
         }
+
     }
 
     &__description {
-        font-size: 18px;
+        @include flex;
+        font-size: $font-size-body;
+        font-weight: $semi-bold;
+        text-align: center;
         color: $light-gray;
         margin-bottom: 48px;
+        padding: 10px;
+
+        @include responsive($s) {
+            font-size: $font-size-body-s;
+        }
     }
 
     &__links {
@@ -30,13 +43,15 @@
         @include flex;
         text-decoration: none;
         font-weight: $bold;
-        font-size: $font-body;
+        font-size: $font-size-body;
+        text-align: center;
         color: white;
         margin: 0 13px;
-        padding: 16px 35px;
+        padding: 18px 30px;
         border-radius: 13px;
         cursor: pointer;
         transition: all 0.2s;
+        box-shadow: $inset-box-shadow;
 
         &:hover {
             transform: translateY(-3px);
@@ -48,6 +63,10 @@
 
         &--gray {
             background-color: $highlight-gray;
+        }
+
+        @include responsive($s) {
+            font-size: $font-size-body-s;
         }
     }
 }
