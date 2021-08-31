@@ -1,0 +1,27 @@
+@import '../../public/css/utils/utils';
+
+* {
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.signIn {
+    @include flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: $background-gray;
+    background-image: url('../../public/assets/signin_balls.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.container {
+    @include flex(column, center, center);
+}
+
+.title {
+    font-family: $inter;
+    font-weight: $bold;
+    font-size: $font-size-header;
+    color: white;
+}

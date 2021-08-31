@@ -1,4 +1,4 @@
-@import '../utils/utils';
+@import '../../../public/css/utils/utils';
 
 .navbar {
     @include flex(row, center, space-between);
