@@ -4,3 +4,12 @@
     justify-content:  $justify-content;
     align-items: $align-items;
 }
+
+@mixin form-rectangle {
+    @include flex;
+    width: 100%;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    border-radius: 13px;
+    box-sizing: border-box;
+}

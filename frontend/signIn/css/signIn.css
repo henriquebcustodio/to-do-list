@@ -20,15 +20,24 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-height: 100vh;
   width: 100vw;
-  height: 100vh;
-  background-color: #1D1D26;
+  background-color: #1d1d26;
   background-image: url("../../public/assets/signin_balls.png");
   background-repeat: no-repeat;
   background-position: center top;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.container {
+@media screen and (max-width: 738px) {
+  .signIn {
+    background-position: left top -90px;
+  }
+}
+
+.signIn .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,12 +51,170 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  max-width: 384px;
+  margin: 20px;
 }
 
-.title {
+.signIn .title {
+  margin-bottom: 60px;
+  margin-top: 50px;
   font-family: "Inter", sans-serif;
   font-weight: 700;
   font-size: 50px;
   color: white;
+}
+
+.signIn .external-sign-in-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  border-radius: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 3px solid #30303d;
+  color: #c3c3d9;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.signIn .external-sign-in-button:hover {
+  background-color: #30303d;
+}
+
+.signIn .external-sign-in-button__icon {
+  margin-right: 15px;
+}
+
+.signIn .break {
+  color: #c3c3d9;
+  margin-bottom: 20px;
+}
+
+.signIn .sign-in-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.signIn .sign-in-form__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  border-radius: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: 3px solid #30303d;
+  background-color: #e8f0fe;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.signIn .sign-in-form__input:hover, .signIn .sign-in-form__input:focus {
+  border: 3px solid #ff76a1;
+}
+
+.signIn .sign-in-form__submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  border-radius: 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  background: linear-gradient(45deg, #cd4cce 0%, #ff9784 100%);
+  -webkit-box-shadow: inset 0 -13px 0px -8px #03030333;
+          box-shadow: inset 0 -13px 0px -8px #03030333;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.signIn .sign-in-form__submit:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
+.signIn .hint {
+  color: #c3c3d9;
+  margin-bottom: 20px;
+}
+
+.signIn .hint__anchor {
+  color: white;
+  text-decoration: none;
+}
+
+.signIn .forgot-password {
+  color: white;
+  margin-bottom: 40px;
+}
+
+.signIn .back-to-home {
+  text-decoration: none;
+  color: #c3c3d9;
+}
+
+.signIn .back-to-home__icon {
+  margin-right: 15px;
 }
 /*# sourceMappingURL=signIn.css.map */
