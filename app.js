@@ -17,6 +17,10 @@ app.get('/users/signin', (req, res) => {
     res.render('signIn');
 });
 
+app.get('/users/signup', (req, res) => {
+    res.render('signUp');
+});
+
 app.get('/app', (req, res) => {
     res.render('app');
 });

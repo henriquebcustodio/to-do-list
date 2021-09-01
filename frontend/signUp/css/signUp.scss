@@ -1,0 +1,118 @@
+@import '../../public/css/utils/utils';
+
+* {
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.signUp {
+    @include flex;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: $background-gray;
+    background-image: url('../../public/assets/signin_balls.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    font-family: $nunito-sans;
+    font-size: $font-size-body;
+    font-weight: $semi-bold;
+
+    @include responsive($m) {
+        background-position: left top -90px;
+    }
+
+    .container {
+        @include flex(column, center, center);
+        width: 100%;
+        max-width: 384px;
+        margin: 20px;
+    }
+    
+    .title {
+        margin-bottom: 60px;
+        margin-top: 50px;
+        font-family: $inter;
+        font-weight: $bold;
+        font-size: $font-size-header;
+        color: white;
+    }
+    
+    .external-sign-up-button {
+        @include form-rectangle;
+        border: 3px solid $highlight-gray;
+        color: $light-gray;
+        cursor: pointer;
+        transition: all 0.2s;
+    
+        &:hover {
+            background-color: $highlight-gray;
+        }
+    
+        &__icon {
+            margin-right: 15px;
+        }
+    }
+
+    .break {
+        color: $light-gray;
+        margin-bottom: 20px;
+    }
+
+    .sign-up-form {
+        @include flex(column, center, center);
+        width: 100%;
+
+        &__input {
+            @include form-rectangle;
+            outline: none;
+            border: 3px solid $highlight-gray;
+            background-color: $input-white;
+            font-family: $nunito-sans;
+            font-size: $font-size-body;
+            font-weight: $semi-bold;
+            transition: all 0.2s;
+
+            &:hover, &:focus {
+                border: 3px solid $pink;
+            }
+
+        }
+
+        &__submit {
+            @include form-rectangle;
+            border: none;
+            background: $pink-gradient;
+            box-shadow: $inset-box-shadow;
+            font-family: $nunito-sans;
+            font-size: $font-size-body;
+            font-weight: $bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &:hover {
+                transform: translateY(-3px);
+            }
+        }
+
+    }
+
+    .hint {
+        color: $light-gray;
+        margin-bottom: 20px;
+
+        &__anchor {
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    .back-to-home {
+        text-decoration: none;
+        color: $light-gray;
+
+        &__icon {
+            margin-right: 15px;
+        }
+    }
+}
