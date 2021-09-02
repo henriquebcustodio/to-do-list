@@ -1,6 +1,7 @@
 function Collection(name, color, icon) {
     return {
         id: ID(),
+        owner: currentUser.uid,
         name,
         color,
         icon
@@ -9,20 +10,20 @@ function Collection(name, color, icon) {
 
 function createCollectionElement(collection) {
     return htmlToElement(`
-    <div class="contentDashboard__collectionItem ${collection.id}">
-        <div class="collectionItem__header">
-            <div class="contentDashboard__iconContainer flexCenter" style="background-color:${collection.color}">
-                <i class="material-icons">${collection.icon}</i>
+    <div class="collection ${collection.id}">
+        <div class="collection__header">
+            <div class="collection__icon-container flexCenter" style="background-color:${collection.color}">
+                <i class="collection__icon material-icons">${collection.icon}</i>
             </div>
         </div>
-        <div class="contentDashboard__collectionInfo">
-            <div class="collectionInfo__left">
-                <span class="collectionTitle">${collection.name}</span>
-                <span class="collectionStats loading"></span>
+        <div class="collection__info">
+            <div class="collection__tips">
+                <span class="collection__title">${collection.name}</span>
+                <span class="collection__stats loading"></span>
             </div>
-            <div class="collectionProgress">
+            <div class="collection__progress">
                 <div>
-                    <div class="progressCircle"></div>
+                    <div class="collection__circle"></div>
                 </div>
             </div>
         </div>
@@ -39,7 +40,7 @@ function addCollectionEvents(collectionElement, collection) {
 }
 
 async function loadCollectionStats(collectionElement, collection) {
-    const circle = progressCircle(collectionElement.querySelector('.progressCircle'), collection);
+    const circle = progressCircle(collectionElement.querySelector('.collection__circle'), collection);
     const closedTasks = await firTaskCountFilter(collection, 'isOpen', '==', false);
     const allTasks = await firTaskCount(collection);
     const percentComplete = closedTasks / allTasks;
@@ -48,7 +49,7 @@ async function loadCollectionStats(collectionElement, collection) {
         duration: 1000 * percentComplete,
     });
 
-    const stats = collectionElement.querySelector('.collectionStats');
+    const stats = collectionElement.querySelector('.collection__stats');
     if (allTasks === 0) {
         stats.innerText = 'No tasks yet';
     } else if (allTasks > 0 && percentComplete !== 1) {

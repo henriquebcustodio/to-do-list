@@ -1,11 +1,11 @@
 function showEditTask(task, collection) {
     const element = htmlToElement(`
-    <div class="editTask modalForm flexCenter">
-        <div class="formMain flexCenter">
-            <input class="formInput" id="newDescription" maxlength="250" spellcheck="false" value="${task.description}" required></input>
-            <div class="formButtons">
-                <div class="formButton save flexCenter">Save</div>
-                <div class="formButton cancel flexCenter">Cancel</div>
+    <div class="edit-task modal-form">
+        <div class="form-main">
+            <input class="form-input" id="newDescription" maxlength="250" spellcheck="false" value="${task.description}"></input>
+            <div class="form-buttons">
+                <div class="form-button save flexCenter">Save</div>
+                <div class="form-button cancel flexCenter">Cancel</div>
             </div>
         </div>
     </div>

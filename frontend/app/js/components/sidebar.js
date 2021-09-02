@@ -10,11 +10,11 @@ addCollectionSidebar.addEventListener('click', () => {
 function sidebarListActive(element, collection) {
     sidebarResetActive();
     element.classList.add('active');
-    element.style.borderLeft = `4px solid ${collection.color}`;
+    element.style.borderLeft = `6px solid ${collection.color}`;
 };
 
 function sidebarResetActive() {
-    const sidebarListItems = document.querySelectorAll('.sidebar__listItem');
+    const sidebarListItems = document.querySelectorAll('.sidebar__item');
     sidebarListItems.forEach(link => {
         link.classList.remove('active');
         link.style.border = 'none';
@@ -22,16 +22,16 @@ function sidebarResetActive() {
 }
 
 function sidebarSetActive(index, collection) {
-    const sidebarListItems = document.querySelectorAll('.sidebar__listItem');
+    const sidebarListItems = document.querySelectorAll('.sidebar__item');
     const element = sidebarListItems[index];
     sidebarListActive(element, collection);
 }
 
 function createSidebarItemElement(collection) {
     const element = htmlToElement(`
-    <div class="sidebar__listItem flexCenter" id="${collection.id}">
-        <div class="sidebar__itemWrapper flexCenter">
-            <div class="sidebar__iconContainer flexCenter" style="background-color:${collection.color}">
+    <div class="sidebar__item flexCenter" id="${collection.id}">
+        <div class="sidebar__item-wrapper flexCenter">
+            <div class="sidebar__icon-container flexCenter" style="background-color:${collection.color}">
                 <i class="material-icons md-20">${collection.icon}</i>
             </div>
             <span class="sidebar__label">${collection.name}</span>

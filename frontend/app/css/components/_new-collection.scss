@@ -1,0 +1,94 @@
+@import '../../../public/css/utils/utils';
+
+
+.new-collection {
+
+    .form-main {
+        @include flex;
+        height: 90%;
+        max-height: 550px;
+
+        @include responsive($m) {
+            max-height: none;
+            height: 100%;
+        }
+    }
+
+    .simplebar-content {
+        @include flex(column, center, center);
+    }
+
+    &__label {
+        @include flex(row, center, flex-start);
+        margin-bottom: 10px;
+        width: 100%;
+        font-size: 18px;
+        color: white;
+    }
+
+    .form-input {
+        margin-bottom: 30px;
+    }
+
+    &__colors {
+        @include flex(row, center, flex-start);
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .color-item {
+        width: 60px;
+        min-width: 60px;
+        height: 50px;
+        min-height: 50px;
+        box-sizing: border-box;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        border-radius: 10px;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+
+    &__icon {
+        @include flex(row, center, flex-start);
+        width: 100%;
+        margin-bottom: 30px;
+        color: white;
+    }
+
+    &__dropdown-content {
+        display: none;
+        position: absolute;
+        overflow: auto;
+        width: 155px;
+        max-height: 160px;
+        top: 170px;
+        background-color: $hover-gray;
+        border-radius: 15px;
+        padding: 15px;
+
+        &.visible {
+            display: block;
+        }
+
+        i {
+            padding: 3px;
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    &__icon-wrapper {
+        @include flex;
+        border: 3px solid $hover-gray;
+        box-sizing: border-box;
+        width: 60px;
+        height: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}

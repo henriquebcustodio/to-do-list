@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Tsks, just tasks.</title>
+    <link rel="icon" href="/public/assets/favicon_x32.png">
+    <link rel="stylesheet" href="/home/css/home.css">
+</head>
+
+<body>
+    <div class="home">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar__list navbar__list--left">
+                    <img src="/public/assets/tsks-logo-w-type.svg" class="navbar__logo">
+                    <span class="navbar__link">Features</span>
+                </div>
+                <div class="navbar__list">
+                    <a href="/signin" class="navbar__link js-toggle-visibility">Sign in</a>
+                    <a href="/signup" class="navbar__button js-toggle-visibility">Sign up</a>
+                    <a href="/" class="navbar__button navbar__button--sign-out js-toggle-visibility hidden"
+                        id="sign-out">Sign out</a>
+                </div>
+            </nav>
+            <main class="lead">
+                <span class="lead__header">Tsks, just tasks<span class="lead__header--pink">.</span></span>
+                <p class="lead__description">Keep track of the daily tasks in life and<br> get that satisfaction upon
+                    completion.</p>
+                <div class="lead__links">
+                    <a href="/signup" class="lead__link lead__link--pink js-toggle-visibility">Get Started</a>
+                    <a href="/app" class="lead__link lead__link--pink js-toggle-visibility hidden">View dashboard</a>
+                    <a href="/" class="lead__link lead__link--gray js-toggle-visibility">Learn More</a>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+                 https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="/public/js/firebase/config.js"></script>
+    <script src="/public/js/firebase/auth.js"></script>
+    <script src="/home/js/home.js"></script>
+</body>
+
+</html>

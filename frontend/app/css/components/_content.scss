@@ -1,0 +1,26 @@
+@import '../../../public/css/utils/utils';
+
+
+.content {
+    @include flex;
+    flex-grow: 2;
+    width: 75%;
+    height: 100%;
+    padding: 0 25px;
+    background-color: $dark-background;
+
+    .simplebar-content {
+        @include flex(row, flex-start, center);
+    }
+
+    &__main {
+        width: 80%;
+        max-width: 1000px;
+        margin-bottom: 50px;
+
+        @include responsive($xl) {
+            width: 100%;
+        }
+    }
+}
+

@@ -13,31 +13,31 @@ function showNewCollection(collection) {
     }
 
     const element = htmlToElement(`
-    <div class="newCollection modalForm flexCenter">
-        <div class="formMain flexCenter" data-simplebar>
-            <div class="newCollection__label">
+    <div class="new-collection modal-form">
+        <div class="form-main" data-simplebar>
+            <div class="new-collection__label">
                 <span>Name</span>
             </div>
-            <input class="formInput" id="collectionName" maxlength="15" spellcheck="false" rows="1"
+            <input class="form-input" id="collectionName" maxlength="15" spellcheck="false" rows="1"
                 placeholder="My Collection" value="${name}"required></input>
-            <div class="newCollection__label">
+            <div class="new-collection__label">
                 <span>Icon</span>
             </div>
-            <div class="newCollection__icon">
-                <div class="newCollection__iconWrapper flexCenter">
+            <div class="new-collection__icon">
+                <div class="new-collection__icon-wrapper">
                     <i class="material-icons">${icon}</i>
                 </div>
-                <div class="newCollection__dropDownContent">
+                <div class="new-collection__dropdown-content">
                 </div>
             </div>
-            <div class="newCollection__label">
+            <div class="new-collection__label">
                 <span>Color</span>
             </div>
-            <div class="newCollection__colors">
+            <div class="new-collection__colors">
             </div>
-            <div class="formButtons">
-                <div class="formButton save flexCenter">${buttonText}</div>
-                <div class="formButton cancel flexCenter">Cancel</div>
+            <div class="form-buttons">
+                <div class="form-button save">${buttonText}</div>
+                <div class="form-button cancel">Cancel</div>
             </div>
         </div>
     </div>
@@ -64,16 +64,16 @@ function addNewCollectionEvents(newCollectionModal, collection) {
         closeNewCollection(newCollectionModal);
     });
 
-    const iconSelector = newCollectionModal.querySelector('.newCollection__iconWrapper');
-    const dropDownMenu = document.querySelector('.newCollection__dropDownContent');
+    const iconSelector = newCollectionModal.querySelector('.new-collection__icon-wrapper');
+    const dropdownMenu = document.querySelector('.new-collection__dropdown-content');
     iconSelector.addEventListener('click', () => {
         newCollectionIgnoreClick = true;
-        dropDownMenu.classList.toggle('visible');
+        dropdownMenu.classList.toggle('visible');
     });
 
-    newCollectionModal.querySelector('.formMain').addEventListener('click', () => {
-        if (dropDownMenu.classList.contains('visible') && !newCollectionIgnoreClick) {
-            dropDownMenu.classList.toggle('visible');
+    newCollectionModal.querySelector('.form-main').addEventListener('click', () => {
+        if (dropdownMenu.classList.contains('visible') && !newCollectionIgnoreClick) {
+            dropdownMenu.classList.toggle('visible');
         }
         newCollectionIgnoreClick = false;
     });
@@ -84,20 +84,20 @@ function closeNewCollection(newCollectionModal) {
 }
 
 function loadIcons() {
-    const dropDownMenu = document.querySelector('.newCollection__dropDownContent');
+    const dropdownMenu = document.querySelector('.new-collection__dropdown-content');
     icons.forEach(iconName => {
         const iconElement = htmlToElement(`<i class="material-icons md-24">${iconName}</i>`);
-        dropDownMenu.appendChild(iconElement);
+        dropdownMenu.appendChild(iconElement);
         iconElement.addEventListener('click', () => {
-            document.querySelector('.newCollection__iconWrapper i').innerHTML = iconElement.innerHTML;
+            document.querySelector('.new-collection__icon-wrapper i').innerHTML = iconElement.innerHTML;
         });
     });
 }
 
 function loadColors(collection) {
-    const colorsWrapper = document.querySelector('.newCollection__colors');
+    const colorsWrapper = document.querySelector('.new-collection__colors');
     colors.forEach(color => {
-        const colorElement = htmlToElement(`<div class="colorItem" id="${color}" style="border: 3px solid ${color};"></div>`);
+        const colorElement = htmlToElement(`<div class="color-item" id="${color}" style="border: 3px solid ${color};"></div>`);
         colorsWrapper.appendChild(colorElement);
         colorElement.addEventListener('click', () => {
             colorsWrapper.children.forEach(child => {
@@ -114,7 +114,7 @@ function loadColors(collection) {
         colorItem.style.backgroundColor = collection.color;
         colorItem.classList.toggle('active');
     } else {
-        const firstColorItem = colorsWrapper.querySelector('.colorItem');
+        const firstColorItem = colorsWrapper.querySelector('.color-item');
         firstColorItem.style.backgroundColor = firstColorItem.getAttribute('id');
         firstColorItem.classList.toggle('active');
     }
@@ -122,15 +122,15 @@ function loadColors(collection) {
 
 function addCollection() {
     const name = document.querySelector('#collectionName').value;
-    const color = document.querySelector('.newCollection .colorItem.active').getAttribute('id');
-    const icon = document.querySelector('.newCollection__iconWrapper i').innerHTML;
+    const color = document.querySelector('.new-collection .color-item.active').getAttribute('id');
+    const icon = document.querySelector('.new-collection__icon-wrapper i').innerHTML;
     newCollection(name, color, icon);
 }
 
 function updateCollection(collection) {
     const name = document.querySelector('#collectionName').value;
-    const color = document.querySelector('.newCollection .colorItem.active').getAttribute('id');
-    const icon = document.querySelector('.newCollection__iconWrapper i').innerHTML;
+    const color = document.querySelector('.new-collection .color-item.active').getAttribute('id');
+    const icon = document.querySelector('.new-collection__icon-wrapper i').innerHTML;
     collection.name = name;
     collection.color = color;
     collection.icon = icon;

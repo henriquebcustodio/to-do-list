@@ -1,0 +1,24 @@
+@mixin flex($direction: row, $align-items: center, $justify-content: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content:  $justify-content;
+    align-items: $align-items;
+}
+
+@mixin form-rectangle {
+    @include flex;
+    width: 100%;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    border-radius: 13px;
+    box-sizing: border-box;
+}
+
+@mixin small-box {
+    @include flex;
+    box-sizing: border-box;
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 40%;
+}

@@ -1,0 +1,90 @@
+.task {
+    @include flex(row, center, space-between);
+    height: 48px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: $nav-gray;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &__left {
+        @include flex(row, center, flex-start);
+        width: 80%;
+        flex-grow: 2;
+    }
+
+    &__right {
+        @include flex(row, center, flex-end);
+        position: relative;
+        margin-left: 10px;
+        opacity: 1;
+
+        i {
+            margin-left: 5px;
+            color: $text-gray;
+            transition: all 0.2s;
+
+            &:hover {
+                color: white;
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    &__toggle-status {
+        @include small-box;
+        border: 2.5px solid var(--dynamic-collection-color);
+        color: $nav-gray;
+        transition: all 0.2s;
+
+        i {
+            display: none;
+        }
+    }
+
+    &__text {
+        font-family: inherit;
+        font-weight: 600;
+        font-size: 16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        color: white;
+        margin-left: 10px;
+    }
+
+    /* Removes the "ghost" element while sorting */
+    &.sortable-drag {
+        opacity: 0;
+    }
+
+    &.sortable-fallback {
+        display: none;
+    }
+
+    &.sortable-chosen {
+        border: 2px solid $hover-gray;
+    }
+}
+
+.completed {
+
+    .task__toggle-status {
+        background-color: var(--dynamic-collection-color);
+        cursor: pointer;
+
+        i {
+            display: inline;
+        }
+    }
+
+    .task__text {
+        text-decoration: line-through;
+    }
+
+    
+}
+
+

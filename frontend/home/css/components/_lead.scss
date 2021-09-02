@@ -1,0 +1,76 @@
+@import '../../../public/css/utils/utils';
+
+.lead {
+    @include flex(column);
+    font-family: $nunito-sans;
+    color: white;
+
+    &__header {
+        display: block;
+        width: 100%;
+        font-family: $inter;
+        font-weight: $bold;
+        font-size: $font-size-header;
+        margin: 28px 0;
+        text-align: center;
+
+        &--pink {
+            display: inline;
+            color: $pink;
+        }
+
+    }
+
+    &__description {
+        @include flex;
+        font-size: $font-size-body;
+        font-weight: $semi-bold;
+        text-align: center;
+        color: $light-gray;
+        margin-bottom: 48px;
+        padding: 10px;
+
+        @include responsive($s) {
+            font-size: $font-size-body-s;
+        }
+    }
+
+    &__links {
+        @include flex;
+    }
+
+    &__link {
+        @include flex;
+        text-decoration: none;
+        font-weight: $bold;
+        font-size: $font-size-body;
+        text-align: center;
+        color: white;
+        margin: 0 13px;
+        padding: 18px 30px;
+        border-radius: 13px;
+        cursor: pointer;
+        transition: all 0.2s;
+        box-shadow: $inset-box-shadow;
+
+        &:hover {
+            transform: translateY(-3px);
+        }
+
+        &.hidden {
+            display: none;
+        }
+
+        &--pink {
+            background: $pink-gradient;
+        }
+
+        &--gray {
+            background-color: $highlight-gray;
+        }
+
+        @include responsive($s) {
+            font-size: $font-size-body-s;
+        }
+    }
+}

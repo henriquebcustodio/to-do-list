@@ -1,51 +1,60 @@
-.modalForm {
+@import '../../../public/css/utils/utils';
+
+.modal-form {
+    @include flex;
     position: absolute;
     top:0;
     left:0;
     width: 100%;
     height: 100%;
-    background-color: rgb(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.65);
 }
 
-.formMain {
-    flex-direction: column;
-    justify-content: flex-start;
+.form-main {
+    @include flex(column, center, flex-start);
     width: 25%;
     min-width: 400px;
     margin: 0 40px;
     box-sizing: border-box;
     padding: 30px 25px;
     border-radius: 15px;
-    background-color: var(--nav-gray);
+    background-color: $nav-gray;
     overflow: auto;
+
+    @include responsive($m) {
+        min-width: 0;
+        width: 100%;
+        margin: 0;
+        height: 100%;
+        border-radius: 0;
+    }
 }
 
-.formInput {
+.form-input {
     font-family: inherit;
     font-weight: 500;
     font-size: 15px;
-    color: var(--text-gray);
+    color: $text-gray;
     overflow: visible;
     height: 50px;
-    /* min-height: 50px; */
     width: 100%;
     box-sizing: border-box;
     padding: 13px;
     resize: none;
     outline: none;
     background-color: transparent;
-    border: 2px solid var(--hover-gray);
+    border: 2px solid $hover-gray;
     border-radius: 13px;
 }
 
-.formButtons {
-    display: flex;
+.form-buttons {
+    @include flex(row, center, flex-start);
     margin-top: 30px;
-    justify-content: flex-start;
     width: 100%;
 }
 
-.formButton {
+.form-button {
+    @include flex;
     width: 75px;
     box-sizing: border-box;
     padding: 11px 50px;
@@ -54,27 +63,17 @@
     font-weight: 600;
     border-radius: 10px;
     transition: all 0.2s;
-}
 
-.formButton:hover {
-    cursor: pointer;
-    transform: translateY(-2px);
-}
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-2px);
+    }
 
-.formButton.save {
-    background: var(--pink-gradient)
-}
+    &.save {
+        background: $pink-gradient
+    }
 
-.formButton.cancel{
-    background-color: var(--button-gray);
-}
-
-@media screen and (max-width: 738px) {
-    .formMain {
-        min-width: 0;
-        width: 100%;
-        margin: 0;
-        height: 100%;
-        border-radius: 0;
+    &.cancel{
+        background-color: $button-gray;
     }
 }

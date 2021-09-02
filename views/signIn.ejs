@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Tsks.</title>
+    <link rel="icon" href="/public/assets/favicon_x32.png">
+    <link rel="stylesheet" href="/signIn/css/signIn.css">
+</head>
+
+<body>
+    <div class="signIn">
+        <div class="container">
+            <h1 class="title">Sign in.</h1>
+            <div class="external-sign-in-button">
+                <i class="external-sign-in-button__icon fab fa-google"></i>
+                Continue with Google
+            </div>
+            <div class="external-sign-in-button">
+                <i class="external-sign-in-button__icon fab fa-facebook"></i>
+                Continue with Facebook
+            </div>
+            <span class="break">or</span>
+            <form action="/" class="sign-in-form">
+                <input type="text" class="sign-in-form__input" id="email" placeholder="Email">
+                <input type="password" class="sign-in-form__input" id="password" placeholder="Password">
+                <button class="sign-in-form__submit">Sign in</button>
+            </form>
+            <p class="hint">Don't have an account? <a class="hint__anchor" href="/signup">Sign up</a></p>
+            <a class="forgot-password">Forgot password?</a>
+            <a class="back-to-home" href="/">
+                <i class="back-to-home__icon fas fa-arrow-left"></i>
+                Back to home
+            </a>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/dd4afe50d1.js" crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+                     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="/public/js/firebase/config.js"></script>
+    <script src="/public/js/firebase/auth.js"></script>
+    <script src="/signIn/js/signIn.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,3 @@
-const collectionsDB = db.collection('collections');
-
 async function firPushCollection(collection) {
     try {
         await collectionsDB.doc(collection.id).set(collection);
@@ -30,7 +28,7 @@ async function firRemoveCollection(collection) {
 
 async function firCollectionCount() {
     try {
-        const snapshot = await collectionsDB.get();
+        const snapshot = await collectionsDB.where("owner", "==", currentUser.uid).get();
         return snapshot.docs.length;
     } catch (err) {
         console.log('Could not count collections', err);
@@ -39,7 +37,7 @@ async function firCollectionCount() {
 
 async function firCollectionsSnapshot() {
     let allCollections = [];
-    const snapshot = await collectionsDB.get();
+    const snapshot = await collectionsDB.where("owner", "==", currentUser.uid).get();
     snapshot.forEach(doc => {
         allCollections.push(doc.data());
     });

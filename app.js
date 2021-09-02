@@ -10,6 +10,18 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'frontend')));
 
 app.get('/', (req, res) => {
+    res.render('home');
+});
+
+app.get('/signin', (req, res) => {
+    res.render('signIn');
+});
+
+app.get('/signup', (req, res) => {
+    res.render('signUp');
+});
+
+app.get('/app', (req, res) => {
     res.render('app');
 });
 

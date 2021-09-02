@@ -1,0 +1,104 @@
+@import '../../../public/css/utils/utils';
+
+
+.collection {
+    @include flex(column, center, space-between);
+    box-sizing: border-box;
+    padding: 20px;
+    height: 160px;
+    border-radius: 25px;
+    background-color: $nav-gray;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    flex-basis: calc(100% * (1/3) - 20px);
+
+    @include responsive($m) {
+        flex-basis: calc(50% - 20px);
+    }
+
+    @include responsive($s) {
+        margin-right: 0;
+        flex-basis: 100%
+    }
+
+    &:nth-of-type(2n+2) {
+        @include responsive($m) {
+            margin-right: 0;
+        }
+    }
+  
+    &:hover {
+        background-color: $hover-gray;
+    }
+
+    &__header {
+        @include flex(row, center, flex-start);
+        width: 100%;
+    }
+
+    &__icon-container {
+        width: 33px;
+        height: 33px;
+        border-radius: 30%;
+    }
+
+    &__icon {
+        color: white;
+    }
+
+    &__info {
+        @include flex(row, flex-end, space-between);
+        width: 100%;
+    }
+
+    &__tips {
+        @include flex(column, flex-start, center);
+    }
+
+    &__title {
+        font-weight: $bold;
+        font-size: $font-size-body;
+        color: white;
+        margin-bottom: 8px;
+    }
+
+    &__stats {
+        font-weight: $bold;
+        font-size: 15px;
+        color: $text-gray-dark;
+
+        &.loading {
+            background-color: $loading-gray;
+            border-radius: 15px;
+            color: transparent;
+            width: 80px;
+            height: 18px;
+        }
+    }
+
+    &__progress {
+        @include flex(row, flex-end, center);
+    }
+
+    &__circle {
+        width: 22px;
+        height: 22px;
+    }
+
+    &--new {
+        @include flex;
+        background-color: transparent;
+        border: 2px solid $hover-gray;
+        height: 80px;
+        margin-right: auto;
+
+        &.collection__icon {
+            @include flex;
+            width: 100%;
+            height: 100%;
+            color: $text-gray;
+        }
+    }
+}

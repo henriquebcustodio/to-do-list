@@ -1,12 +1,12 @@
 function createDashboardView() {
     return htmlToElement(`
-    <div class="contentDashboard">
-        <div class="contentDashboard__header">
-            <span class="header__title">Collections</span>
+    <div class="dashboard">
+        <div class="dashboard__header">
+            <span class="dashboard__title">Collections</span>
         </div>
-        <div class="contentDashboard__collections">
-            <div class="contentDashboard__collectionItem flexCenter" id="newCollection">
-                <i class="material-icons flexCenter">add</i>
+        <div class="collections">
+            <div class="collection collection--new" id="newCollection">
+                <i class="collection__icon material-icons flexCenter">add</i>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@ async function renderDashboardView() {
 
     loadDashboardViewEvents();
 
-    collectionsContainer = document.querySelector('.contentDashboard__collections');
+    collectionsContainer = document.querySelector('.collections');
 
     await updateDashboard();
 }
@@ -34,7 +34,7 @@ function loadDashboardViewEvents() {
 
 function closeDashboardView() {
     dashboardNav.classList.remove('active');
-    document.querySelector('.contentDashboard').remove();
+    document.querySelector('.dashboard').remove();
 }
 
 async function updateDashboard() {
