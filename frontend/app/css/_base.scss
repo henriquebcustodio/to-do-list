@@ -1,15 +1,7 @@
+@import '../../public/css/utils/utils';
+
 :root {
-    --dark-background: #17181F;
-    --nav-gray: #1D1D26;
-    --hover-gray: #282934;
-    --loading-gray: #30313d;
-    --text-gray: #cfcfcf;
-    --text-gray-dark: #7B7C83;
-    --button-gray: #32323F;
-    --dark-border: #1d1e26;
-    --std-pink: #ff76a1;
     --dynamic-collection-color: #ff76a1;
-    --pink-gradient: linear-gradient(45deg, #ce69e0 0%, #fd9ea9 100%);
 }
 
 * {
@@ -21,7 +13,7 @@ html, body {
 }
 
 body {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: $nunito-sans;
     display: grid;
     place-items: center;
 }
@@ -40,14 +32,6 @@ body {
     align-items: center;
 }
 
-.smallBox {
-    box-sizing: border-box;
-    min-width: 20px;
-    width: 20px;
-    height: 20px;
-    border-radius: 40%;
-}
-
 .app {
     overflow: hidden;
     height: 100vh;
@@ -57,8 +41,7 @@ body {
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
+    @include flex(row, center, space-between);
     height: calc(100% - 50px);
 }
 
@@ -68,15 +51,13 @@ body {
 }
 
 #loading.visible {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex;
     top: 0;
     position: fixed;
     width: 100%;
     height: 100%;   
     flex-grow: 1;
-    background-color: rgb(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.65);
     z-index: 5;
     color: white;
     font-weight: 700;

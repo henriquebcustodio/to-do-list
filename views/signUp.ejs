@@ -23,12 +23,12 @@
                 Continue with Facebook
             </div>
             <span class="break">or</span>
-            <form action="/" class="sign-up-form">
-                <input type="text" class="sign-up-form__input" placeholder="Email">
-                <input type="password" class="sign-up-form__input" placeholder="Password">
+            <form class="sign-up-form">
+                <input type="text" class="sign-up-form__input" id="email" placeholder="Email">
+                <input type="password" class="sign-up-form__input" id="password" placeholder="Password">
                 <button class="sign-up-form__submit">Sign up</button>
             </form>
-            <p class="hint">Already have an account? <a class="hint__anchor" href="/users/signin">Sign in</a></p>
+            <p class="hint">Already have an account? <a class="hint__anchor" href="/signin">Sign in</a></p>
             <a class="back-to-home" href="/">
                 <i class="back-to-home__icon fas fa-arrow-left"></i>
                 Back to home
@@ -36,6 +36,14 @@
         </div>
     </div>
     <script src="https://kit.fontawesome.com/dd4afe50d1.js" crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+                 https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="/public/js/firebase/config.js"></script>
+    <script src="/public/js/firebase/auth.js"></script>
+    <script src="/signUp/js/signUp.js"></script>
 </body>
 
 </html>

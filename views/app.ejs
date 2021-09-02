@@ -18,33 +18,36 @@
 
 <body>
     <div class="app">
-        <nav class="navbar flexCenter">
-            <div class="navbar__listLeft">
-                <div class="navbar__item flexCenter" id="menu">
-                    <div class="navbar__iconContainer flexCenter">
-                        <i class="material-icons md-30">menu</i>
+        <nav class="navbar">
+            <div class="navbar__list navbar__list--left">
+                <div class="navbar__item navbar__item--menu" id="menu">
+                    <div class="navbar__icon-container">
+                        <i class="navbar__icon material-icons md-30">menu</i>
                     </div>
                 </div>
-                <div class="navbar__item flexCenter" id="dashboard">
-                    <div class="navbar__iconContainer flexCenter">
-                        <i class="material-icons md-24">dashboard</i>
+                <div class="navbar__item" id="dashboard">
+                    <div class="navbar__icon-container">
+                        <i class="navbar__icon material-icons md-24">dashboard</i>
                     </div>
                     <span class="navbar__label">Dashboard</span>
                 </div>
             </div>
-            <div class="navbar__listRight">
-                <div class="navbar__item flexCenter" id="avatar">
-                    <img src="/public/assets/avatar.png" alt="avatar">
+            <div class="navbar__list navbar__list--right">
+                <div class="navbar__item">
+                    <img src="/public/assets/avatar.png" class="navbar__avatar" alt="avatar">
+                    <div class="navbar__dropdown-content dropdown">
+                        <div class="navbar__sign-out">Sign out</div>
+                    </div>
                 </div>
-                </ul>
+            </div>
         </nav>
         <div class="container">
             <nav class="sidebar" data-simplebar>
-                <div class="sidebar__header flexCenter">
-                    <div class="sidebar__headerLeft">
+                <div class="sidebar__header">
+                    <div class="sidebar__header sidebar__header--left">
                         <span class="sidebar__title">Collections</span>
                     </div>
-                    <div class="sidebar__headerRight flexCenter">
+                    <div class="sidebar__header sidebar__header--right">
                         <div class="sidebar__add flexCenter">
                             <i class="material-icons">add</i>
                         </div>
@@ -53,7 +56,7 @@
                 <div class="sidebar__list">
                 </div>
             </nav>
-            <div class="content flexCenter" data-simplebar>
+            <div class="content" data-simplebar>
                 <main class="content__main">
                 </main>
             </div>
@@ -71,7 +74,9 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
              https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
-    <script src="/app/js/firebase/config.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="/public/js/firebase/config.js"></script>
+    <script src="/public/js/firebase/auth.js"></script>
     <script src="/app/js/firebase/tasksFir.js"></script>
     <script src="/app/js/firebase/collectionsFir.js"></script>
     <script src="/app/js/global.js"></script>
@@ -85,6 +90,7 @@
     <script src="/app/js/views/tasksView.js"></script>
     <script src="/app/js/views/dashboardView.js"></script>
     <script src="/app/js/todo.js"></script>
+    <script src="/app/js/firebase/auth.js"></script>
 </body>
 
 </html>

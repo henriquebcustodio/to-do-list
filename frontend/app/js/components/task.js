@@ -1,6 +1,7 @@
 function Task(description, index) {
     return {
         id: ID(),
+        owner: currentUser.uid,
         description,
         isOpen: true,
         index
@@ -9,18 +10,18 @@ function Task(description, index) {
 
 function createTaskElement(task) {
     return htmlToElement(`
-    <li class="task flexCenter" id="${task.id}">
-        <div class="task__left flexCenter">
-            <div class="task__toggleStatus smallBox flexCenter noDrag">
+    <li class="task" id="${task.id}">
+        <div class="task__left ">
+            <div class="task__toggle-status no-drag">
                 <i class="material-icons md-18">done</i>
             </div>
             <span class="task__text">${task.description}</span>
         </div>
-        <div class="task__right flexCenter">
-            <i class="material-icons md-24 noDrag">more_vert</i>
-            <div class="task__dropDownContent dropDown">
-                <div class="editTask">Edit</div>
-                <div class="deleteTask">Delete</div>
+        <div class="task__right">
+            <i class="material-icons md-24 no-drag">more_vert</i>
+            <div class="task__dropdown-content dropdown">
+                <div class="task__edit-task">Edit</div>
+                <div class="task__delete-task">Delete</div>
             </div>
         </div>
     </li>`);
@@ -48,30 +49,35 @@ function addTaskEvents(task, taskElement, collection) {
     taskElement.addEventListener('dragend', () => onDrag = false);
 
     // Listens for clicks on the completeTask button
-    const completeTaskButton = taskElement.querySelector('.task__toggleStatus');
+    const completeTaskButton = taskElement.querySelector('.task__toggle-status');
     completeTaskButton.addEventListener('click', function () {
         toggleStatus(task, collection);
         taskElement.classList.remove('hovered');
     });
 
     const dotMenu = taskElement.querySelector('.task__right i');
-    const dropDownMenu = taskElement.querySelector('.task__dropDownContent');
+    const dropdownMenu = taskElement.querySelector('.task__dropdown-content');
     dotMenu.addEventListener('click', e => {
-        document.querySelectorAll('.dropDown').forEach(dropDown => {
-            dropDown.classList.remove('active');
+        const isActive = dropdownMenu.classList.contains('active');
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
         });
-        dropDownMenu.classList.add('active');
+        if (isActive) {
+            dropdownMenu.classList.remove('active');
+        } else {
+            dropdownMenu.classList.add('active');
+        }
         e.stopPropagation();
     });
 
     // Listens for clicks on the deleteTask button
-    const deleteTaskButton = taskElement.querySelector('.deleteTask');
+    const deleteTaskButton = taskElement.querySelector('.task__delete-task');
     deleteTaskButton.addEventListener('click', function () {
         deleteTask(task, collection);
         taskElement.classList.remove('hovered');
     });
 
-    const editTaskButton = taskElement.querySelector('.editTask');
+    const editTaskButton = taskElement.querySelector('.task__edit-task');
     editTaskButton.addEventListener('click', function () {
         showEditTask(task, collection);
     });

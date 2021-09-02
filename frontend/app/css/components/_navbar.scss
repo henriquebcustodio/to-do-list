@@ -1,0 +1,76 @@
+@import '../../../public/css/utils/utils';
+
+
+.navbar {
+    @include flex(row, center, space-between);
+    z-index: 1;
+    position: relative;
+    height: 60px;
+    background-color: $nav-gray;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.72);
+
+    &__list {
+        height: 100%;
+        list-style-type: none;
+
+        &--right {
+            @include flex(row, center, flex-end);
+        }
+
+        &--left {
+            @include flex(row, center, flex-start);
+            margin-left: 25px;
+        }
+    }
+
+    &__item {
+        @include flex;
+        position: relative;
+        color: $text-gray;
+        height: 100%;
+        margin-right: 25px;
+        box-sizing: border-box;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        transition: color 0.1s, border 0.05s;
+
+        &:hover {
+            color: white;
+        }
+
+        &.active {
+            border-bottom: 2px solid white;
+            color: white;
+        }
+
+        &--menu {
+            @include responsive($l) {
+                display: none;
+            }
+        }
+    }
+
+    &__label {
+        margin-left: 10px;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    &__icon-container {
+        @include flex;
+    }
+
+    &__avatar {
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 100%;
+        background-color: white;
+    }
+
+    &__dropdown-content {
+        &.dropdown {
+            top: 50px;
+        }
+    }
+}

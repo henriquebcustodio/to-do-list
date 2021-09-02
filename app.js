@@ -13,11 +13,11 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/users/signin', (req, res) => {
+app.get('/signin', (req, res) => {
     res.render('signIn');
 });
 
-app.get('/users/signup', (req, res) => {
+app.get('/signup', (req, res) => {
     res.render('signUp');
 });
 

@@ -1,6 +1,6 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyDJ1A88-J-BqBgYAFWZV28qP_4lswJAzQQ",
     authDomain: "todolist-68b8d.firebaseapp.com",
     projectId: "todolist-68b8d",
@@ -11,5 +11,3 @@ var firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
-let db = firebase.firestore();

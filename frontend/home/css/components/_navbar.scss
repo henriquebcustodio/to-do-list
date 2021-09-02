@@ -51,6 +51,11 @@
         &:hover {
             border-bottom: 2px solid $pink;
         }
+
+        &.hidden {
+            display: none;
+        }
+
     }
 
     &__button {
@@ -64,6 +69,16 @@
 
         &:hover {
             border: 3px solid $pink;
+        }
+
+        &.hidden {
+            display: none;
+        }
+
+        &--sign-out {
+            @include responsive($m) {
+                display: none;
+            }
         }
     }
 }

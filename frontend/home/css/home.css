@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,7 +22,7 @@
       -ms-flex-align: center;
           align-items: center;
   font-family: "Nunito Sans", sans-serif;
-  background-color: #1D1D26;
+  background-color: #1d1d26;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -103,9 +106,13 @@
   border-bottom: 2px solid #ff76a1;
 }
 
+.navbar__link.hidden {
+  display: none;
+}
+
 .navbar__button {
   padding: 12px 24px;
-  border: 3px solid #30303D;
+  border: 3px solid #30303d;
   border-radius: 12px;
   text-decoration: none;
   color: white;
@@ -116,6 +123,16 @@
 
 .navbar__button:hover {
   border: 3px solid #ff76a1;
+}
+
+.navbar__button.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 738px) {
+  .navbar__button--sign-out {
+    display: none;
+  }
 }
 
 .lead {
@@ -229,12 +246,16 @@
           transform: translateY(-3px);
 }
 
+.lead__link.hidden {
+  display: none;
+}
+
 .lead__link--pink {
-  background: linear-gradient(45deg, #CD4CCE 0%, #FF9784 100%);
+  background: linear-gradient(45deg, #cd4cce 0%, #ff9784 100%);
 }
 
 .lead__link--gray {
-  background-color: #30303D;
+  background-color: #30303d;
 }
 
 @media screen and (max-width: 420px) {
@@ -265,7 +286,7 @@
   top: 0;
   height: 100vh;
   width: 100vw;
-  background-color: #1D1D26;
+  background-color: #1d1d26;
   overflow: hidden;
 }
 

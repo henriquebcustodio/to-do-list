@@ -1,12 +1,17 @@
 const loadingOverlay = document.querySelector('#loading');
 const app = document.querySelector('.app');
 
+loadingOverlay.classList.add('visible');
+
 app.addEventListener('click', () => {
-    document.querySelectorAll('.dropDown').forEach(dropDown => {
-        dropDown.classList.remove('active');
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
     });
 
 });
 
-loadSideBar();
-renderDashboardView();
+function renderApp() {
+    loadSideBar();
+    renderDashboardView();
+    loadingOverlay.classList.remove('visible');
+}
