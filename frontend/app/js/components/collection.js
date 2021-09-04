@@ -12,7 +12,7 @@ function createCollectionElement(collection) {
     return htmlToElement(`
     <div class="collection ${collection.id}">
         <div class="collection__header">
-            <div class="collection__icon-container flexCenter" style="background-color:${collection.color}">
+            <div class="collection__icon-container" style="background-color:${collection.color}">
                 <i class="collection__icon material-icons">${collection.icon}</i>
             </div>
         </div>

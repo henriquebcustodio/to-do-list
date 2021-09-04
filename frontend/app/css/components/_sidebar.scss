@@ -42,11 +42,12 @@
 
     &__title {
         color: $text-gray;
-        font-weight: 600;
-        font-size: 16px;
+        font-weight: $semi-bold;
+        font-size: $font-size-body-s;
     }
 
     &__add {
+        @include flex;
         color: $text-gray;
         border-radius: 40%;
         height: 25px;
@@ -84,10 +85,12 @@
     }
 
     &__item-wrapper {
+        @include flex;
         color: white;
     }
 
     &__icon-container {
+        @include flex;
         margin: 0 15px 0px 25px;
         height: 33px;
         width: 33px;

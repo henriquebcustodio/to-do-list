@@ -45,8 +45,8 @@
 
     &__text {
         font-family: inherit;
-        font-weight: 600;
-        font-size: 16px;
+        font-weight: $semi-bold;
+        font-size: $font-size-body-s;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;

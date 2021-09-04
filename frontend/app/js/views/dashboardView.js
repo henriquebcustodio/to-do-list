@@ -6,7 +6,7 @@ function createDashboardView() {
         </div>
         <div class="collections">
             <div class="collection collection--new" id="newCollection">
-                <i class="collection__icon material-icons flexCenter">add</i>
+                <i class="collection__icon material-icons">add</i>
             </div>
         </div>
     </div>

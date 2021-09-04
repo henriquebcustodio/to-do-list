@@ -29,9 +29,9 @@ function sidebarSetActive(index, collection) {
 
 function createSidebarItemElement(collection) {
     const element = htmlToElement(`
-    <div class="sidebar__item flexCenter" id="${collection.id}">
-        <div class="sidebar__item-wrapper flexCenter">
-            <div class="sidebar__icon-container flexCenter" style="background-color:${collection.color}">
+    <div class="sidebar__item" id="${collection.id}">
+        <div class="sidebar__item-wrapper">
+            <div class="sidebar__icon-container" style="background-color:${collection.color}">
                 <i class="material-icons md-20">${collection.icon}</i>
             </div>
             <span class="sidebar__label">${collection.name}</span>

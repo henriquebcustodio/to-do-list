@@ -12,10 +12,16 @@
     transition: all 0.2s;
     margin-right: 20px;
     margin-bottom: 20px;
-    flex-basis: calc(100% * (1/3) - 20px);
+    flex-basis: calc(100% * (1/3) - (40px/3));
+
+    &:nth-of-type(3n+3) {
+        @include responsive($m, min-width) {
+            margin-right: 0;
+        }
+    }
 
     @include responsive($m) {
-        flex-basis: calc(50% - 20px);
+        flex-basis: calc(50% - 10px);
     }
 
     @include responsive($s) {
@@ -39,12 +45,14 @@
     }
 
     &__icon-container {
+        @include flex;
         width: 33px;
         height: 33px;
         border-radius: 30%;
     }
 
     &__icon {
+        @include flex;
         color: white;
     }
 
@@ -66,7 +74,7 @@
 
     &__stats {
         font-weight: $bold;
-        font-size: 15px;
+        font-size: $font-size-body-s;
         color: $text-gray-dark;
 
         &.loading {
