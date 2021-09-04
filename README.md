@@ -21,4 +21,4 @@ You can access it <a href="https://tsks-app.herokuapp.com/">here</a>!
 
 ![mockup](https://user-images.githubusercontent.com/77708400/129491876-ff60d5ee-9134-404a-87d4-472e9d7225b3.png)
 
-<p><i>All credits of this design goes to Oliver Cederborg. You can find more of his amazing work on <a href="https://dribbble.com/oliver">Dribbble</a>.</i></p>
+<p><i>All credits of this design go to Oliver Cederborg. You can find more of his amazing work on <a href="https://dribbble.com/oliver">Dribbble</a>.</i></p>
