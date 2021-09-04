@@ -19,7 +19,7 @@ function createTaskElement(task) {
         </div>
         <div class="task__right">
             <i class="material-icons md-24 no-drag">more_vert</i>
-            <div class="task__dropdown-content dropdown">
+            <div class="task__dropdown-content dropdown no-drag">
                 <div class="task__edit-task">Edit</div>
                 <div class="task__delete-task">Delete</div>
             </div>

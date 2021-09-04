@@ -22,7 +22,7 @@
         @include flex(row, center, flex-start);
         margin-bottom: 10px;
         width: 100%;
-        font-size: 18px;
+        font-size: $font-size-body;
         color: white;
     }
 

@@ -19,7 +19,7 @@ function createTasksView(collection) {
             </div>
         </div>
         <div class="tasks__new-task">
-            <div class="tasks__add  flexCenter">
+            <div class="tasks__add">
                 <i class="tasks__add-icon material-icons md-18">add</i>
             </div>
             <input type="text" spellcheck="false" class="tasks__new-task-input"

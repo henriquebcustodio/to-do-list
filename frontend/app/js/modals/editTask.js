@@ -4,8 +4,8 @@ function showEditTask(task, collection) {
         <div class="form-main">
             <input class="form-input" id="newDescription" maxlength="250" spellcheck="false" value="${task.description}"></input>
             <div class="form-buttons">
-                <div class="form-button save flexCenter">Save</div>
-                <div class="form-button cancel flexCenter">Cancel</div>
+                <div class="form-button save">Save</div>
+                <div class="form-button cancel">Cancel</div>
             </div>
         </div>
     </div>

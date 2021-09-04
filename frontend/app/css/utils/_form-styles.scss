@@ -33,7 +33,7 @@
 .form-input {
     font-family: inherit;
     font-weight: 500;
-    font-size: 15px;
+    font-size: $font-size-body-s;
     color: $text-gray;
     overflow: visible;
     height: 50px;
@@ -60,7 +60,7 @@
     padding: 11px 50px;
     margin-right: 15px;
     color: white;
-    font-weight: 600;
+    font-weight: $semi-bold;
     border-radius: 10px;
     transition: all 0.2s;
 

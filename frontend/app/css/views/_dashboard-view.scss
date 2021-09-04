@@ -3,7 +3,6 @@
 
 .dashboard {
     flex-direction: column;
-    margin-left: 20px;
 
     @include responsive($s) {
         margin-left: 0;
@@ -11,10 +10,11 @@
 
     &__header {
         @include flex(row, center, flex-start);
-        font-weight: 700;
-        font-size: 30px;
+        font-weight: $bold;
+        font-size: $font-size-header-s;
         color: white;
-        margin: 40px 0;
+        margin-top: 40px;
+        margin-bottom: 25px;
     }
 }
 

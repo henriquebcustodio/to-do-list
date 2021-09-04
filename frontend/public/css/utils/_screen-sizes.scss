@@ -3,8 +3,8 @@ $l: 900px;
 $m: 738px;
 $s: 420px;
 
-@mixin responsive($query) {
-    @media screen and (max-width: $query) {
+@mixin responsive($query, $type: max-width) {
+    @media screen and ($type: $query) {
         @content
     }
 }
