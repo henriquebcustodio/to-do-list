@@ -1,5 +1,5 @@
 # About
-A to do list where users can create, edit, delete and drag tasks. Users can also perfom CRUD operations on collections of tasks.<br>
+A to do list app where users can create, edit, delete and drag tasks. Users can also perfom CRUD operations on collections of tasks.<br>
 You can access it <a href="https://tsks-app.herokuapp.com/">here</a>!
 
 # Technologies
@@ -21,4 +21,4 @@ You can access it <a href="https://tsks-app.herokuapp.com/">here</a>!
 
 ![mockup](https://user-images.githubusercontent.com/77708400/129491876-ff60d5ee-9134-404a-87d4-472e9d7225b3.png)
 
-<p><i>All credits of this design go to Oliver Cederborg. You can find more of his amazing work on <a href="https://dribbble.com/oliver">Dribbble</a>.</i></p>
+<p><i>All credit of this design goes to Oliver Cederborg. You can find more of his amazing work on <a href="https://dribbble.com/oliver">Dribbble</a>.</i></p>
